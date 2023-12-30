@@ -1,0 +1,10 @@
+Add the pinyin in parentheses next to the chinese words for each vocabulary line.
+The format should be:
+- {chinese_characters} ({pinyin}): {english_translation}
+Do not change the existing English translation!
+
+Consolidated Chinese cocabulary (without Pinyin):
+- 结果：result
+- 街头：street
+
+Total number of Chinese vocabulary: 2
