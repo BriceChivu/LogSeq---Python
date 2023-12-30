@@ -8,7 +8,7 @@ import datetime
 # Paths
 MARKDOWN_DIR = "/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals"
 PYTHON_SCRIPTS_DIR = "/Users/brice/Documents/LogSeq-GitHub/python"
-BACKUP_DIR = os.path.join(PYTHON_SCRIPTS_DIR, "backups")
+BACKUP_DIR = os.path.join(PYTHON_SCRIPTS_DIR, "bak")
 LOG_FILE = os.path.join(PYTHON_SCRIPTS_DIR, "change_log.log")
 CONSO_VOC_NO_PINYIN_OUTPUT = os.path.join(
     PYTHON_SCRIPTS_DIR, "consolidate_voc_no_pinyin_output.txt"
@@ -128,8 +128,8 @@ def main():
     with open(LOG_FILE, 'a') as log:  # Open log file in append mode
         if args.revert:
             revert_changes()
-            log.write(f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Reverted changes from backups.\n")
-            print("Reverted changes from backups.")
+            log.write(f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Reverted changes from backups (bak folder).\n")
+            print("Reverted changes from backups (bak folder).")
         else:
             create_backup()
             vocab_mapping = process_outputs()
