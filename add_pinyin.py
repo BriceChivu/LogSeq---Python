@@ -195,3 +195,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# TODO: do the tests
+# TODO: Do not backup ALL the markdown files, just those that will be changed (or should I leave it like this?)
+# TODO: clean up code
