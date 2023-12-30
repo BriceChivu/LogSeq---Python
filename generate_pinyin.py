@@ -64,7 +64,8 @@ def update_markdown_files(vocab_mapping):
 
                     if len(matches) > 1:
                         log_entry = (
-                            f"{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Multiple matches for '{chinese}' in file {filename}:\n"
+                            f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Multiple"
+                            f" matches for '{chinese}' in file {filename}:\n"
                         )
                         print(log_entry, end="")
                         for i, (line_num, line) in enumerate(matches):
@@ -86,8 +87,9 @@ def update_markdown_files(vocab_mapping):
                                     pattern, replacement, content[selected_line_num]
                                 )
                                 log.write(
-                                    f"{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Replaced '{chinese}' with '{replacement}' in"
-                                    f" {filename}, line {selected_line_num + 1}\n"
+                                    f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -"
+                                    f" Replaced '{chinese}' with '{replacement}' in {filename},"
+                                    f" line {selected_line_num + 1}\n"
                                 )
                                 break
                             elif choice == "a":
@@ -96,8 +98,9 @@ def update_markdown_files(vocab_mapping):
                                         pattern, replacement, content[line_num]
                                     )
                                 log.write(
-                                    f"{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Replaced all instances of '{chinese}' with"
-                                    f" '{replacement}' in {filename}\n"
+                                    f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -"
+                                    f" Replaced all instances of '{chinese}' with '{replacement}'"
+                                    f" in {filename}\n"
                                 )
                                 break
                             elif choice == "s":
@@ -111,8 +114,9 @@ def update_markdown_files(vocab_mapping):
                         line_num, _ = matches[0]
                         content[line_num] = re.sub(pattern, replacement, content[line_num])
                         log.write(
-                            f"{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Replaced '{chinese}' with '{replacement}' in"
-                            f" {filename}, line {line_num + 1}\n"
+                            f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Replaced"
+                            f" '{chinese}' with '{replacement}' in {filename}, line"
+                            f" {line_num + 1}\n"
                         )
 
                 with open(filepath, "w") as file:
@@ -122,19 +126,25 @@ def update_markdown_files(vocab_mapping):
 # Main function
 def main():
     parser = argparse.ArgumentParser(description="Update Markdown files with Pinyin.")
-    parser.add_argument('--revert', action='store_true', help='Revert to backup files')
+    parser.add_argument("--revert", action="store_true", help="Revert to backup files")
     args = parser.parse_args()
 
-    with open(LOG_FILE, 'a') as log:  # Open log file in append mode
+    with open(LOG_FILE, "a") as log:  # Open log file in append mode
         if args.revert:
             revert_changes()
-            log.write(f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Reverted changes from backups (bak folder).\n")
+            log.write(
+                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Reverted changes from"
+                " backups (bak folder).\n"
+            )
             print("Reverted changes from backups (bak folder).")
         else:
             create_backup()
             vocab_mapping = process_outputs()
             update_markdown_files(vocab_mapping)
-            log.write(f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Markdown files updated with Pinyin.\n")
+            log.write(
+                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Markdown files updated"
+                " with Pinyin.\n"
+            )
             print("Markdown files updated with Pinyin.")
         log.write("\n")
 
