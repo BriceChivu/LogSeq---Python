@@ -37,7 +37,7 @@ def main():
     )
     parser.add_argument(
         "--path",
-        default="/Users/brice/Documents/logseq/journals",
+        default="/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals",
         help="Path to the directory containing Markdown files",
     )
     args = parser.parse_args()

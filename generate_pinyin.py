@@ -6,8 +6,8 @@ import datetime
 
 
 # Paths
-MARKDOWN_DIR = "/Users/brice/Documents/logseq/journals"
-PYTHON_SCRIPTS_DIR = "/Users/brice/Documents/logseq/python"
+MARKDOWN_DIR = "/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals"
+PYTHON_SCRIPTS_DIR = "/Users/brice/Documents/LogSeq-GitHub/python"
 BACKUP_DIR = os.path.join(PYTHON_SCRIPTS_DIR, "backups")
 LOG_FILE = os.path.join(PYTHON_SCRIPTS_DIR, "change_log.log")
 CONSO_VOC_NO_PINYIN_OUTPUT = os.path.join(
