@@ -58,20 +58,24 @@ def revert_changes():
 def process_outputs(chatgpt_output):
     vocab_mapping = {}
     for line in chatgpt_output:
-        parts = line.strip().split(":")
+        parts = line.strip().split(
+            ":"
+        )  # assumes there is a ":" after the pinyin and before the english translation
         if len(parts) >= 2:
             chinese_pinyin = parts[0].strip()
-            chinese = chinese_pinyin.split(" ")[0].strip()
+            chinese = re.split(r"[ 。]", chinese_pinyin)[
+                0
+            ]  # assumes there is a space or a 。 after the chinese characters and before the pinyin
             vocab_mapping[chinese] = chinese_pinyin
     return vocab_mapping
 
 
 # Update Markdown Files Function
-def update_markdown_files(vocab_mapping):
+def update_markdown_files(vocab_mapping, path_folder_markdown):
     with open(LOG_FILE, "a") as log:
-        for filename in os.listdir(MARKDOWN_DIR):
+        for filename in os.listdir(path_folder_markdown):
             if filename.endswith(".md"):
-                filepath = os.path.join(MARKDOWN_DIR, filename)
+                filepath = os.path.join(path_folder_markdown, filename)
                 with open(filepath, "r") as file:
                     content = file.readlines()
 
@@ -169,7 +173,9 @@ def main():
             print(
                 "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
                 " line.\nThe format should be:\n- {chinese_characters} ({pinyin}):"
-                " {english_translation}\nDo not change the existing English translation!"
+                " {english_translation}\nDo not change the existing English translation!\nDo not"
+                " capitalize the first letter of the pinyin (e.g., wanted: zuò fàn, not wanted: Zuò"
+                " fàn)"
             )
             print("\nConsolidated Chinese cocabulary (without Pinyin):")
             for line in chinese_voc_no_pinyin:
@@ -184,7 +190,7 @@ def main():
                     break
                 lines.append(line)
             vocab_mapping = process_outputs(lines)
-            update_markdown_files(vocab_mapping)
+            update_markdown_files(vocab_mapping, args.path)
             log.write(
                 f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Markdown files updated"
                 " with Pinyin.\n"
@@ -200,3 +206,6 @@ if __name__ == "__main__":
 # TODO: do the tests
 # TODO: Do not backup ALL the markdown files, just those that will be changed (or should I leave it like this?)
 # TODO: clean up code
+# NOTE：讲到 , 说起：to talk about didnt work
+# TODO: log in revert changes should say exactly what got reverted
+# TODO: if nothing changed, alert me
