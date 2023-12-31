@@ -23,27 +23,25 @@ def extract_chinese_voc_no_pinyin(line):
 
 
 def process_directory_no_pinyin(directory_path):
-    """
-    Process all Markdown files in a directory to find lines with Chinese vocabulary without Pinyin.
-    :param directory_path: Path to the directory containing Markdown files.
-    :return: A list of lines containing Chinese vocabulary without Pinyin.
-    """
     voc_lines = []
+    files_and_lines_ref = []
     for filename in os.listdir(directory_path):
         if filename.endswith(".md"):
             file_path = os.path.join(directory_path, filename)
             with open(file_path, "r", encoding="utf-8") as file:
-                for line in file:
+                for line_number, line in enumerate(file, start=1):
                     if extract_chinese_voc_no_pinyin(line):
                         voc_lines.append(line.strip())
-    return voc_lines
+                        files_and_lines_ref.append([file_path, line_number])
+    return voc_lines, files_and_lines_ref
 
 
 # Backup creation
-def create_backup():
+def create_backup(files_and_lines_ref):
     if not os.path.exists(BACKUP_DIR):
         os.makedirs(BACKUP_DIR)
-    for filename in os.listdir(MARKDOWN_DIR):
+    mardown_files = [sublist[0] for sublist in files_and_lines_ref]
+    for filename in mardown_files:
         if filename.endswith(".md"):
             shutil.copy2(os.path.join(MARKDOWN_DIR, filename), BACKUP_DIR)
 
@@ -148,6 +146,25 @@ def update_markdown_files(vocab_mapping, path_folder_markdown):
                     file.writelines(content)
 
 
+def update_markdown_files_2(chatgpt_output, files_and_lines_ref):
+    with open(LOG_FILE, "a") as log:
+        changes = list(zip(files_and_lines_ref, chatgpt_output))
+        for (file_path, line_num), new_line in changes:
+            filename = file_path.split("/")[-1]
+            with open(file_path, "r") as file:
+                lines = file.readlines()
+
+            log.write(
+                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Replaced"
+                f" '{lines[line_num - 1]}' with '{new_line}' in {filename}, line"
+                f" {line_num}\n"
+            )
+            lines[line_num - 1] = new_line + "\n"
+
+            with open(file_path, "w") as file:
+                file.writelines(lines)
+
+
 # Main function
 def main():
     parser = argparse.ArgumentParser(description="Update Markdown files with Pinyin.")
@@ -168,29 +185,32 @@ def main():
             )
             print("Reverted changes from backups (bak folder).")
         else:
-            create_backup()
-            chinese_voc_no_pinyin = process_directory_no_pinyin(args.path)
+            chinese_voc_no_pinyin, files_and_lines_ref = process_directory_no_pinyin(args.path)
+            create_backup(files_and_lines_ref)
             print(
                 "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
-                " line.\nThe format should be:\n- {chinese_characters} ({pinyin}):"
-                " {english_translation}\nDo not change the existing English translation!\nDo not"
-                " capitalize the first letter of the pinyin (e.g., wanted: zuò fàn, not wanted: Zuò"
-                " fàn)"
+                " line. The format should be:\n- {chinese_characters} ({pinyin}):"
+                " {english_translation}\nDo not capitalize the first letter of the pinyin (e.g.,"
+                " wanted: zuò fàn, not wanted: Zuò fàn).\nEach pinyin should be next to its"
+                " corresponding Chinese characters (e.g., wanted: 讲到 (jiǎng dào) , 说起 (shuō qǐ)"
+                " not wanted: 讲到 , 说起 (jiǎng dào, shuō qǐ))\n"
+                "Do not remove duplicates."
             )
             print("\nConsolidated Chinese cocabulary (without Pinyin):")
             for line in chinese_voc_no_pinyin:
                 print(line)
             print(f"\nTotal number of Chinese vocabulary: {len(chinese_voc_no_pinyin)}")
-            lines = []
+            chatgpt_output = []
             print("\nCopy above and paste it to ChatGPT.")
             print("Now, paste the output of ChatGPT here:")
             while True:
                 line = input()
                 if line == "":
                     break
-                lines.append(line)
-            vocab_mapping = process_outputs(lines)
-            update_markdown_files(vocab_mapping, args.path)
+                chatgpt_output.append(line)
+            # vocab_mapping = process_outputs(lines)
+            # update_markdown_files(vocab_mapping, args.path)
+            update_markdown_files_2(chatgpt_output, files_and_lines_ref)
             log.write(
                 f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Markdown files updated"
                 " with Pinyin.\n"
