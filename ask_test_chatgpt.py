@@ -21,7 +21,7 @@ def process_directory(directory_path):
     :return: A list of lines containing Chinese vocabulary.
     """
     voc_lines = []
-    for filename in os.listdir(directory_path):
+    for filename in sorted(os.listdir(directory_path)):
         if filename.endswith(".md"):
             file_path = os.path.join(directory_path, filename)
             with open(file_path, "r", encoding="utf-8") as file:
