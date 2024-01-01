@@ -12,7 +12,7 @@ BACKUP_DIR = os.path.join(PYTHON_SCRIPTS_DIR, "bak")
 LOG_FILE = os.path.join(PYTHON_SCRIPTS_DIR, "change_log.log")
 
 
-def extract_chinese_voc_no_pinyin(line: str) -> bool:
+def has_chinese_without_pinyin(line: str) -> bool:
     """
     Check if a line contains Chinese characters but no Pinyin.
     Args:
@@ -27,7 +27,9 @@ def extract_chinese_voc_no_pinyin(line: str) -> bool:
     return has_chinese_char and not has_pinyin
 
 
-def process_directory_no_pinyin(directory_path: str) -> Tuple[list[str], list[list[str, int]]]:
+def get_all_chinese_lines_without_pinyin(
+    directory_path: str,
+) -> Tuple[list[str], list[list[str, int]]]:
     """
     Process a directory to extract lines that contain Chinese vocabulary without Pinyin.
     Args:
@@ -43,7 +45,7 @@ def process_directory_no_pinyin(directory_path: str) -> Tuple[list[str], list[li
             file_path = os.path.join(directory_path, filename)
             with open(file_path, "r", encoding="utf-8") as file:
                 for line_number, line in enumerate(file, start=1):
-                    if extract_chinese_voc_no_pinyin(line):
+                    if has_chinese_without_pinyin(line):
                         voc_lines.append(line.strip())
                         files_and_lines_ref.append([file_path, line_number])
     return voc_lines, files_and_lines_ref
@@ -144,6 +146,9 @@ def main():
         if args.revert:
             revert_changes(BACKUP_DIR, args.path)
         else:
+            chinese_voc_no_pinyin, files_and_lines_ref = get_all_chinese_lines_without_pinyin(
+                args.path
+            )
             if not files_and_lines_ref:
                 log.write(
                     f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - All voc already"
@@ -171,8 +176,6 @@ def main():
                 if line == "":
                     break
                 chatgpt_output.append(line)
-            # vocab_mapping = process_outputs(lines)
-            # update_markdown_files(vocab_mapping, args.path)
             update_markdown_files(chatgpt_output, files_and_lines_ref)
             log.write(
                 f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Markdown files updated"
@@ -187,6 +190,4 @@ if __name__ == "__main__":
 
 
 # TODO: do the tests
-# TODO: clean up code
 # TODO: log in revert changes should say exactly what got reverted
-# TODO: if nothing changed, alert me
