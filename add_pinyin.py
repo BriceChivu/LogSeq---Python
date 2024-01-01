@@ -144,7 +144,13 @@ def main():
         if args.revert:
             revert_changes(BACKUP_DIR, args.path)
         else:
-            chinese_voc_no_pinyin, files_and_lines_ref = process_directory_no_pinyin(args.path)
+            if not files_and_lines_ref:
+                log.write(
+                    f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - All voc already"
+                    " have pinyin.\n"
+                )
+                print("All voc already have pinyin.")
+                exit()
             create_backup(files_and_lines_ref, args.path, BACKUP_DIR)
             print(
                 "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
