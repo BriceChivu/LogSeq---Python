@@ -155,20 +155,26 @@ def update_markdown_files(vocab_mapping, path_folder_markdown):
                     file.writelines(content)
 
 
+def capture_indentation(text):
+    match = re.match(r"[^a-zA-Z\u4e00-\u9fff]+", text)
+    return match.group() if match else ""
+
+
 def update_markdown_files_2(chatgpt_output, files_and_lines_ref):
     with open(LOG_FILE, "a") as log:
         changes = list(zip(files_and_lines_ref, chatgpt_output))
-        for (file_path, line_num), new_line in changes:
+        for (file_path, line_num), chatgpt_line in changes:
             filename = file_path.split("/")[-1]
             with open(file_path, "r") as file:
                 lines = file.readlines()
 
             log.write(
                 f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Replaced"
-                f" '{lines[line_num - 1]}' with '{new_line}' in {filename}, line"
+                f" '{lines[line_num - 1].strip()}' with '{chatgpt_line}' in {filename}, line"
                 f" {line_num}\n"
             )
-            lines[line_num - 1] = new_line + "\n"
+            indentation = capture_indentation(lines[line_num - 1])
+            lines[line_num - 1] = indentation + chatgpt_line + "\n"
 
             with open(file_path, "w") as file:
                 file.writelines(lines)
@@ -232,3 +238,4 @@ if __name__ == "__main__":
 # NOTE：讲到 , 说起：to talk about didnt work
 # TODO: log in revert changes should say exactly what got reverted
 # TODO: if nothing changed, alert me
+# TODO: indentation and hyphens are not respected !! TO FIX
