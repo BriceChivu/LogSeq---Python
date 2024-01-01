@@ -1,5 +1,7 @@
 - This is a test line.
 hello 你好
+你好
+hello 你好
 -我住在北京市。
     yes no test
 讲到 , 说起：to talk about
