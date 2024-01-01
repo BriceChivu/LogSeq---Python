@@ -9,7 +9,7 @@ from python.add_pinyin import (
 test_dir = "/Users/brice/Documents/LogSeq-GitHub/python/test"
 
 # Test data
-chinese_lines_no_pinyin = [
+chinese_lines_no_pinyin_from_dummy = [
     "hello 你好",
     "hello 你好",
     "-我住在北京市。",
@@ -44,12 +44,35 @@ def test_has_chinese_without_pinyin():
 
 # Test for get_all_chinese_lines_without_pinyin function
 def test_get_all_chinese_lines_without_pinyin():
-    extracted_lines, _ = get_all_chinese_lines_without_pinyin(
-        "/Users/brice/Documents/LogSeq-GitHub/python/test"
-    )
-    assert all(
-        line in extracted_lines for line in chinese_lines_no_pinyin
-    )  # tests that all the chinese lines are correctly extracted from the markdown file
+    # Expected result based on your dummy.md and other test files
+    expected_voc_lines = [
+        "hello 你好",
+        "hello 你好",
+        "-我住在北京市。",
+        "讲到 , 说起：to talk about",
+        "- 我经常编程。",
+        "如何 ：how",
+        "to persist ：坚持",
+    ]
+    expected_files_and_lines_ref = [
+        ["/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md", 2],
+        ["/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md", 4],
+        ["/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md", 5],
+        ["/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md", 7],
+        ["/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md", 8],
+        ["/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md", 10],
+        ["/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md", 11],
+    ]
+
+    # Call the function
+    voc_lines, files_and_lines_ref = get_all_chinese_lines_without_pinyin(test_dir)
+
+    # Assertions
+    assert voc_lines == expected_voc_lines
+    assert files_and_lines_ref == expected_files_and_lines_ref
+
+
+# TODO: continue testing from create_backup()
 
 
 # Test for update_markdown_files function
