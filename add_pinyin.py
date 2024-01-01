@@ -1,10 +1,9 @@
-# Revised script to closely align with the original logic of the two scripts
-
 import os
 import shutil
 import re
 import argparse
 import datetime
+from typing import Tuple
 
 # Constants for directory paths
 MARKDOWN_DIR = "/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals"
@@ -13,8 +12,14 @@ BACKUP_DIR = os.path.join(PYTHON_SCRIPTS_DIR, "bak")
 LOG_FILE = os.path.join(PYTHON_SCRIPTS_DIR, "change_log.log")
 
 
-# Function to check if a line contains Chinese characters but no Pinyin
-def extract_chinese_voc_no_pinyin(line):
+def extract_chinese_voc_no_pinyin(line: str) -> bool:
+    """
+    Check if a line contains Chinese characters but no Pinyin.
+    Args:
+        line (str): The line of text to be checked.
+    Returns:
+        bool: True if the line contains Chinese characters but no Pinyin, False otherwise.
+    """
     chinese_char_pattern = r"[\u4e00-\u9fff]"
     pinyin_pattern = r"[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]"
     has_chinese_char = re.search(chinese_char_pattern, line) is not None
@@ -22,7 +27,15 @@ def extract_chinese_voc_no_pinyin(line):
     return has_chinese_char and not has_pinyin
 
 
-def process_directory_no_pinyin(directory_path):
+def process_directory_no_pinyin(directory_path: str) -> Tuple[list[str], list[list[str, int]]]:
+    """
+    Process a directory to extract lines that contain Chinese vocabulary without Pinyin.
+    Args:
+        directory_path (str): The path to the directory containing Markdown files.
+    Returns:
+        Tuple[list[str], list[list[str, int]]]: A tuple containing a list of lines with Chinese vocabulary
+        and a list of file paths with line numbers where these lines were found.
+    """
     voc_lines = []
     files_and_lines_ref = []
     for filename in os.listdir(directory_path):
@@ -36,8 +49,18 @@ def process_directory_no_pinyin(directory_path):
     return voc_lines, files_and_lines_ref
 
 
-# Backup creation
-def create_backup(files_and_lines_ref, copy_from_path, copy_to_path):
+def create_backup(
+    files_and_lines_ref: list[list[str, int]],
+    copy_from_path: str,
+    copy_to_path: str,
+) -> None:
+    """
+    Create a backup of files based on a reference list of files and lines.
+    Args:
+        files_and_lines_ref (list[list[str, int]]): A list of lists containing file paths and corresponding line numbers.
+        copy_from_path (str): The directory path from which files will be copied.
+        copy_to_path (str): The directory path to which files will be copied for backup.
+    """
     if not os.path.exists(copy_to_path):
         os.makedirs(copy_to_path)
     mardown_files = [sublist[0] for sublist in files_and_lines_ref]
@@ -46,8 +69,13 @@ def create_backup(files_and_lines_ref, copy_from_path, copy_to_path):
             shutil.copy2(os.path.join(copy_from_path, filename), copy_to_path)
 
 
-# Revert to backup
-def revert_changes(copy_from_path, copy_to_path):
+def revert_changes(copy_from_path: str, copy_to_path: str) -> None:
+    """
+    Revert changes made to files by copying them back from the backup directory.
+    Args:
+        copy_from_path (str): The backup directory path from which files will be copied.
+        copy_to_path (str): The original directory path to which files will be restored.
+    """
     with open(LOG_FILE, "a") as log:
         for filename in os.listdir(copy_from_path):
             log.write(
@@ -61,106 +89,27 @@ def revert_changes(copy_from_path, copy_to_path):
             shutil.copy2(os.path.join(copy_from_path, filename), copy_to_path)
 
 
-# Read and process outputs
-def process_outputs(chatgpt_output):
-    vocab_mapping = {}
-    for line in chatgpt_output:
-        parts = line.strip().split(
-            ":"
-        )  # assumes there is a ":" after the pinyin and before the english translation
-        if len(parts) >= 2:
-            chinese_pinyin = parts[0].strip()
-            chinese = re.split(r"[ 。]", chinese_pinyin)[
-                0
-            ]  # assumes there is a space or a 。 after the chinese characters and before the pinyin
-            vocab_mapping[chinese] = chinese_pinyin
-    return vocab_mapping
-
-
-# Update Markdown Files Function
-def update_markdown_files(vocab_mapping, path_folder_markdown):
-    with open(LOG_FILE, "a") as log:
-        for filename in os.listdir(path_folder_markdown):
-            if filename.endswith(".md"):
-                filepath = os.path.join(path_folder_markdown, filename)
-                with open(filepath, "r") as file:
-                    content = file.readlines()
-
-                for chinese, replacement in vocab_mapping.items():
-                    pattern = r"(?<![\w])" + re.escape(chinese) + r"(?![\w])"
-                    matches = [
-                        (line_num, line.strip())
-                        for line_num, line in enumerate(content)
-                        for m in re.finditer(pattern, line)
-                    ]
-
-                    if len(matches) > 1:
-                        log_entry = (
-                            f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Multiple"
-                            f" matches for '{chinese}' in file {filename}:\n"
-                        )
-                        print(log_entry, end="")
-                        for i, (line_num, line) in enumerate(matches):
-                            match_info = f"{i + 1}) Line {line_num + 1}: {line}\n"
-                            print(match_info, end="")
-                            log_entry += match_info
-                        log.write(log_entry)
-                        while True:
-                            choice = (
-                                input("Enter the number to replace, 'a' for all, or 's' to skip: ")
-                                .strip()
-                                .lower()
-                            )
-                            log.write("Enter the number to replace, 'a' for all, or 's' to skip:\n")
-                            log.write(f"User's choice: {choice}\n")  # Log the user's choice
-                            if choice.isdigit() and 1 <= int(choice) <= len(matches):
-                                selected_line_num = matches[int(choice) - 1][0]
-                                content[selected_line_num] = re.sub(
-                                    pattern, replacement, content[selected_line_num]
-                                )
-                                log.write(
-                                    f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -"
-                                    f" Replaced '{chinese}' with '{replacement}' in {filename},"
-                                    f" line {selected_line_num + 1}\n"
-                                )
-                                break
-                            elif choice == "a":
-                                for line_num, _ in matches:
-                                    content[line_num] = re.sub(
-                                        pattern, replacement, content[line_num]
-                                    )
-                                log.write(
-                                    f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -"
-                                    f" Replaced all instances of '{chinese}' with '{replacement}'"
-                                    f" in {filename}\n"
-                                )
-                                break
-                            elif choice == "s":
-                                print("Skipped.")
-                                log.write("Skipped as per user's choice.\n")
-                                break
-                            else:
-                                print("Invalid input, please try again.")
-                                log.write("Invalid input received.\n")
-                    elif matches:
-                        line_num, _ = matches[0]
-                        content[line_num] = re.sub(pattern, replacement, content[line_num])
-                        log.write(
-                            f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Replaced"
-                            f" '{chinese}' with '{replacement}' in {filename}, line"
-                            f" {line_num + 1}\n"
-                        )
-
-                with open(filepath, "w") as file:
-                    file.writelines(content)
-
-
-def capture_indentation(text):
+def capture_indentation(text: str) -> str:
+    """
+    Capture the indentation used at the beginning of a given text.
+    Args:
+        text (str): The text from which to extract indentation.
+    Returns:
+        str: The extracted indentation characters (e.g., spaces, tabs).
+    """
     match = re.match(r"[^a-zA-Z\u4e00-\u9fff]+", text)
     return match.group() if match else ""
 
 
-def update_markdown_files_2(chatgpt_output, files_and_lines_ref):
+def update_markdown_files(
+    chatgpt_output: list[str], files_and_lines_ref: list[list[str, int]]
+) -> None:
+    """
+    Update Markdown files with the output from ChatGPT, respecting the original indentation.
+    Args:
+        chatgpt_output (list[str]): The lines of text output by ChatGPT to be inserted into the files.
+        files_and_lines_ref (list[list[str, int]]): A list of file paths and corresponding line numbers where the updates will be made.
+    """
     with open(LOG_FILE, "a") as log:
         changes = list(zip(files_and_lines_ref, chatgpt_output))
         for (file_path, line_num), chatgpt_line in changes:
@@ -190,14 +139,13 @@ def main():
         help="Path to the directory containing Markdown files",
     )
     args = parser.parse_args()
-    python_bak = "/Users/brice/Documents/LogSeq-GitHub/python/bak"
 
     with open(LOG_FILE, "a") as log:
         if args.revert:
-            revert_changes(python_bak, args.path)
+            revert_changes(BACKUP_DIR, args.path)
         else:
             chinese_voc_no_pinyin, files_and_lines_ref = process_directory_no_pinyin(args.path)
-            create_backup(files_and_lines_ref, args.path, python_bak)
+            create_backup(files_and_lines_ref, args.path, BACKUP_DIR)
             print(
                 "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
                 " line. The format should be:\n- {chinese_characters} ({pinyin}):"
@@ -219,7 +167,7 @@ def main():
                 chatgpt_output.append(line)
             # vocab_mapping = process_outputs(lines)
             # update_markdown_files(vocab_mapping, args.path)
-            update_markdown_files_2(chatgpt_output, files_and_lines_ref)
+            update_markdown_files(chatgpt_output, files_and_lines_ref)
             log.write(
                 f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Markdown files updated"
                 " with Pinyin.\n"
@@ -233,9 +181,6 @@ if __name__ == "__main__":
 
 
 # TODO: do the tests
-# TODO: Do not backup ALL the markdown files, just those that will be changed (or should I leave it like this?)
 # TODO: clean up code
-# NOTE：讲到 , 说起：to talk about didnt work
 # TODO: log in revert changes should say exactly what got reverted
 # TODO: if nothing changed, alert me
-# TODO: indentation and hyphens are not respected !! TO FIX
