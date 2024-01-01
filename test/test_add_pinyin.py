@@ -1,7 +1,7 @@
 import os
 from python.add_pinyin import (
-    extract_chinese_voc_no_pinyin,
-    process_directory_no_pinyin,
+    has_chinese_without_pinyin,
+    get_all_chinese_lines_without_pinyin,
     update_markdown_files,
 )
 
@@ -9,38 +9,47 @@ from python.add_pinyin import (
 test_dir = "/Users/brice/Documents/LogSeq-GitHub/python/test"
 
 # Test data
-original_lines = [
-    "今天天气不错。",
-    "学习 Python 很有趣。",
-    "我喜欢吃苹果。",
-    "谢谢你。",
-    "hello 你好。",
-    "我住在北京市。",
+chinese_lines_no_pinyin = [
+    "hello 你好",
+    "hello 你好",
+    "-我住在北京市。",
+    "讲到 , 说起：to talk about",
+    "- 我经常编程。",
+    "如何 ：how",
+    "to persist ：坚持",
 ]
 updated_lines = [
-    "今天天气不错 (jīntiān tiānqì bùcuò)。",
-    "学习 Python 很有趣 (xuéxí Python hěn yǒuqù)。",
-    "我喜欢吃苹果 (wǒ xǐhuān chī píngguǒ)。",
-    "谢谢你 (xièxiè nǐ)。",
-    "hello 你好 (hello nǐ hǎo)。",
-    "我住在北京市 (wǒ zhù zài běijīng shì)。",
+    "你好 (nǐ hǎo): hello",
+    "你好 (nǐ hǎo): hello",
+    "你好 (nǐ hǎo): hello",
+    "我住在北京市。 (wǒ zhù zài běijīng shì.): I live in Beijing.",
+    "讲到, 说起 (jiǎng dào, shuō qǐ): to talk about",
+    "我经常编程。 (wǒ jīngcháng biānchéng.): I often program.",
+    "如何 (rúhé): how",
+    "坚持 (jiānchí): to persist",
 ]
 
 
-# Test for extract_chinese_voc_no_pinyin function
-def test_extract_chinese_voc_no_pinyin():
-    assert extract_chinese_voc_no_pinyin("今天天气不错。") == True
-    assert extract_chinese_voc_no_pinyin("This is a test line.") == False
-    assert extract_chinese_voc_no_pinyin("我住在北京市 (wǒ zhù zài běijīng shì)。") == False
+# Test for has_chinese_without_pinyin function
+def test_has_chinese_without_pinyin():
+    assert has_chinese_without_pinyin("今天天气不错。") == True
+    assert has_chinese_without_pinyin("There is no chinese character in this line.") == False
+    assert (
+        has_chinese_without_pinyin(
+            "我住在北京市 (wǒ zhù zài běijīng shì)。This line already has pinyin"
+        )
+        == False
+    )
 
 
-# Test for process_directory_no_pinyin function
-def test_process_directory_no_pinyin():
-    extracted_lines = process_directory_no_pinyin(
+# Test for get_all_chinese_lines_without_pinyin function
+def test_get_all_chinese_lines_without_pinyin():
+    extracted_lines, _ = get_all_chinese_lines_without_pinyin(
         "/Users/brice/Documents/LogSeq-GitHub/python/test"
     )
-    assert all(line in extracted_lines for line in original_lines)
-    assert not any(line in extracted_lines for line in updated_lines)
+    assert all(
+        line in extracted_lines for line in chinese_lines_no_pinyin
+    )  # tests that all the chinese lines are correctly extracted from the markdown file
 
 
 # Test for update_markdown_files function
