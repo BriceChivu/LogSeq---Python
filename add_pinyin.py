@@ -37,19 +37,28 @@ def process_directory_no_pinyin(directory_path):
 
 
 # Backup creation
-def create_backup(files_and_lines_ref):
-    if not os.path.exists(BACKUP_DIR):
-        os.makedirs(BACKUP_DIR)
+def create_backup(files_and_lines_ref, copy_from_path, copy_to_path):
+    if not os.path.exists(copy_to_path):
+        os.makedirs(copy_to_path)
     mardown_files = [sublist[0] for sublist in files_and_lines_ref]
     for filename in mardown_files:
         if filename.endswith(".md"):
-            shutil.copy2(os.path.join(MARKDOWN_DIR, filename), BACKUP_DIR)
+            shutil.copy2(os.path.join(copy_from_path, filename), copy_to_path)
 
 
 # Revert to backup
-def revert_changes():
-    for filename in os.listdir(BACKUP_DIR):
-        shutil.copy2(os.path.join(BACKUP_DIR, filename), MARKDOWN_DIR)
+def revert_changes(copy_from_path, copy_to_path):
+    with open(LOG_FILE, "a") as log:
+        for filename in os.listdir(copy_from_path):
+            log.write(
+                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {filename} is being"
+                " reverted to previous version.\n"
+            )
+            print(
+                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {filename} is being"
+                " reverted to previous version."
+            )
+            shutil.copy2(os.path.join(copy_from_path, filename), copy_to_path)
 
 
 # Read and process outputs
@@ -175,25 +184,19 @@ def main():
         help="Path to the directory containing Markdown files",
     )
     args = parser.parse_args()
+    python_bak = "/Users/brice/Documents/LogSeq-GitHub/python/bak"
 
     with open(LOG_FILE, "a") as log:
         if args.revert:
-            revert_changes()
-            log.write(
-                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Reverted changes from"
-                " backups (bak folder).\n"
-            )
-            print("Reverted changes from backups (bak folder).")
+            revert_changes(python_bak, args.path)
         else:
             chinese_voc_no_pinyin, files_and_lines_ref = process_directory_no_pinyin(args.path)
-            create_backup(files_and_lines_ref)
+            create_backup(files_and_lines_ref, args.path, python_bak)
             print(
                 "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
                 " line. The format should be:\n- {chinese_characters} ({pinyin}):"
                 " {english_translation}\nDo not capitalize the first letter of the pinyin (e.g.,"
-                " wanted: zuò fàn, not wanted: Zuò fàn).\nEach pinyin should be next to its"
-                " corresponding Chinese characters (e.g., wanted: 讲到 (jiǎng dào) , 说起 (shuō qǐ)"
-                " not wanted: 讲到 , 说起 (jiǎng dào, shuō qǐ))\n"
+                " wanted: zuò fàn, not wanted: Zuò fàn).\n"
                 "Do not remove duplicates."
             )
             print("\nConsolidated Chinese cocabulary (without Pinyin):")
