@@ -71,6 +71,18 @@ def create_backup(
             shutil.copy2(os.path.join(copy_from_path, filename), copy_to_path)
 
 
+def clear_bak_folder(path):
+    for filename in os.listdir(path):
+        file_path = os.path.join(path, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print(f"Failed to delete {file_path}. Reason: {e}")
+
+
 def revert_changes(copy_from_path: str, copy_to_path: str) -> None:
     """
     Revert changes made to files by copying them back from the backup directory.
@@ -146,6 +158,7 @@ def main():
         if args.revert:
             revert_changes(BACKUP_DIR, args.path)
         else:
+            clear_bak_folder(BACKUP_DIR)
             chinese_voc_no_pinyin, files_and_lines_ref = get_all_chinese_lines_without_pinyin(
                 args.path
             )
@@ -161,8 +174,15 @@ def main():
                 "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
                 " line. The format should be:\n- {chinese_characters} ({pinyin}):"
                 " {english_translation}\nDo not capitalize the first letter of the pinyin (e.g.,"
-                " wanted: zuò fàn, not wanted: Zuò fàn).\n"
-                "Do not remove duplicates."
+                " wanted: zuò fàn, not wanted: Zuò fàn).\nIf there are lines with 2 or more Chinese"
+                " words separated by a comma, put the pinyin next to its corresponding voc (e.g.,"
+                " wanted: 做饭 (zuò fàn)，烹饪 (pēng rèn): to cook, not wanted: 做饭 ，烹饪 (zuò"
+                " fàn, pēng rèn): to cook).\nDo not separate the pinyin into 2 parts if it"
+                " corresponds to 1 word or expression (e.g., wanted: 面包 (miànbāo), not wanted:"
+                " 面包 (miàn bāo))\nDo not remove duplicates. The total number of lines (Total"
+                " number of Chinese vocabulary) should remain the same, i.e., do not split existing"
+                " lines (e.g., - to cook: 做饭 ，烹饪 should remain 1 line only).\n At the end,"
+                " show me the total number of lines for which you added pinyin."
             )
             print("\nConsolidated Chinese cocabulary (without Pinyin):")
             for line in chinese_voc_no_pinyin:
@@ -191,3 +211,5 @@ if __name__ == "__main__":
 
 # TODO: do the tests
 # TODO: log in revert changes should say exactly what got reverted
+# TOFIX: revert should revert the last changes only, not all files from bak folder
+# TODO: verify that the ChatGPT output number of lines is the same as the number of voc without pinyin
