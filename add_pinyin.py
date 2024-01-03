@@ -4,6 +4,7 @@ import re
 import argparse
 import datetime
 from typing import Tuple
+import pyperclip
 
 # Constants for directory paths
 MARKDOWN_DIR = "/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals"
@@ -40,7 +41,7 @@ def get_all_chinese_lines_without_pinyin(
     """
     voc_lines = []
     files_and_lines_ref = []
-    for filename in os.listdir(directory_path):
+    for filename in sorted(os.listdir(directory_path)):
         if filename.endswith(".md"):
             file_path = os.path.join(directory_path, filename)
             with open(file_path, "r", encoding="utf-8") as file:
@@ -52,7 +53,7 @@ def get_all_chinese_lines_without_pinyin(
 
 
 def create_backup(
-    files_and_lines_ref: list[list[str, int]],
+    markdown_paths_to_be_updated: list,
     copy_from_path: str,
     copy_to_path: str,
 ) -> None:
@@ -65,8 +66,7 @@ def create_backup(
     """
     if not os.path.exists(copy_to_path):
         os.makedirs(copy_to_path)
-    mardown_files = [sublist[0] for sublist in files_and_lines_ref]
-    for filename in mardown_files:
+    for filename in markdown_paths_to_be_updated:
         if filename.endswith(".md"):
             shutil.copy2(os.path.join(copy_from_path, filename), copy_to_path)
 
@@ -132,8 +132,8 @@ def update_markdown_files(
                 lines = file.readlines()
 
             log.write(
-                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Replaced"
-                f" '{lines[line_num - 1].strip()}' with '{chatgpt_line}' in {filename}, line"
+                f'{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - Replaced'
+                f' "{lines[line_num - 1].strip()}" with "{chatgpt_line}" in {filename}, line'
                 f" {line_num}\n"
             )
             indentation = capture_indentation(lines[line_num - 1])
@@ -141,6 +141,34 @@ def update_markdown_files(
 
             with open(file_path, "w") as file:
                 file.writelines(lines)
+
+
+def create_chatgpt_prompt(chinese_voc_no_pinyin: list) -> str:
+    text_prompt_to_chatgpt = (
+        "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
+        " line. The format should be:\n- {chinese_characters} ({pinyin}):"
+        " {english_translation}\nDo not capitalize the first letter of the pinyin (e.g.,"
+        " wanted: zuò fàn, not wanted: Zuò fàn).\nIf there are lines with 2 or more Chinese"
+        " words separated by a comma, put the pinyin next to its corresponding voc (e.g.,"
+        " wanted: 做饭 (zuò fàn)，烹饪 (pēng rèn): to cook, not wanted: 做饭 ，烹饪 (zuò"
+        " fàn, pēng rèn): to cook).\nDo not separate the pinyin into 2 parts if it"
+        " corresponds to 1 word or expression (e.g., wanted: 面包 (miànbāo), not wanted:"
+        " 面包 (miàn bāo))\nDo not remove duplicates. The total number of lines (Total"
+        " number of Chinese vocabulary) should remain the same, i.e., do not split existing"
+        " lines (e.g., - to cook: 做饭 ，烹饪 should remain 1 line only).\nAt the end,"
+        " show me the total number of lines for which you added pinyin.\n\nConsolidated"
+        " Chinese vocabulary (without Pinyin):\n"
+    )
+    all_lines = ""
+    for line in chinese_voc_no_pinyin:
+        all_lines += line + "\n"
+    print("\033[1m" + "\nAll voc lines without pinyin:" + "\033[0m")
+    str_total = f"\nTotal number of Chinese vocabulary: {len(chinese_voc_no_pinyin)}"
+    print(all_lines + "\033[1m" + str_total + "\033[0m")
+    all_lines += str_total
+    text_prompt_to_chatgpt += all_lines
+
+    return text_prompt_to_chatgpt
 
 
 # Main function
@@ -167,41 +195,32 @@ def main():
                     f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - All voc already"
                     " have pinyin.\n"
                 )
-                print("All voc already have pinyin.")
+                print("All voc already have pinyin.\n")
                 exit()
-            create_backup(files_and_lines_ref, args.path, BACKUP_DIR)
-            print(
-                "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
-                " line. The format should be:\n- {chinese_characters} ({pinyin}):"
-                " {english_translation}\nDo not capitalize the first letter of the pinyin (e.g.,"
-                " wanted: zuò fàn, not wanted: Zuò fàn).\nIf there are lines with 2 or more Chinese"
-                " words separated by a comma, put the pinyin next to its corresponding voc (e.g.,"
-                " wanted: 做饭 (zuò fàn)，烹饪 (pēng rèn): to cook, not wanted: 做饭 ，烹饪 (zuò"
-                " fàn, pēng rèn): to cook).\nDo not separate the pinyin into 2 parts if it"
-                " corresponds to 1 word or expression (e.g., wanted: 面包 (miànbāo), not wanted:"
-                " 面包 (miàn bāo))\nDo not remove duplicates. The total number of lines (Total"
-                " number of Chinese vocabulary) should remain the same, i.e., do not split existing"
-                " lines (e.g., - to cook: 做饭 ，烹饪 should remain 1 line only).\n At the end,"
-                " show me the total number of lines for which you added pinyin."
-            )
-            print("\nConsolidated Chinese cocabulary (without Pinyin):")
-            for line in chinese_voc_no_pinyin:
-                print(line)
-            print(f"\nTotal number of Chinese vocabulary: {len(chinese_voc_no_pinyin)}")
+            markdown_paths_to_be_updated = [sublist[0] for sublist in files_and_lines_ref]
+            create_backup(markdown_paths_to_be_updated, args.path, BACKUP_DIR)
+            text_prompt_to_chatgpt = create_chatgpt_prompt(chinese_voc_no_pinyin)
+            pyperclip.copy(text_prompt_to_chatgpt)
+
+            # 2nd step: pasting the ChatGPT output
             chatgpt_output = []
-            print("\nCopy above and paste it to ChatGPT.")
+            print("\nCmd + v in ChatGPT.")
             print("Now, paste the output of ChatGPT here:")
             while True:
                 line = input()
                 if line == "":
                     break
                 chatgpt_output.append(line)
+
             update_markdown_files(chatgpt_output, files_and_lines_ref)
-            log.write(
-                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - Markdown files updated"
-                " with Pinyin.\n"
+            markdown_filenames = ", ".join(
+                [file.split("/")[-1] for file in markdown_paths_to_be_updated]
             )
-            print("Markdown files updated with Pinyin.")
+            log.write(
+                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -"
+                f" {markdown_filenames} files updated with Pinyin.\n"
+            )
+            print(f"{markdown_filenames} files updated with Pinyin.")
         log.write("\n")
 
 
@@ -211,5 +230,4 @@ if __name__ == "__main__":
 
 # TODO: do the tests
 # TODO: log in revert changes should say exactly what got reverted
-# TOFIX: revert should revert the last changes only, not all files from bak folder
 # TODO: verify that the ChatGPT output number of lines is the same as the number of voc without pinyin
