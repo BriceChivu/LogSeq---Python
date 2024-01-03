@@ -44,13 +44,11 @@ def main():
 
     chinese_voc = process_directory(args.path)
     print(
-        "\nI want to review my vocabulary list.\nCreate a test: For 50 Chinese"
-        " vocabulary taken randomly from my list, show me the English words or"
-        " sentences (exactly as shown in my vocabulary list). Do not include the pinyin"
-        " nor the chinese characters.\nDo not change the English words/sentences. The"
-        " order should also be random.\nRemove any duplicates.\nThe test should be in"
-        " the form of \n1. It's 22 dec today\n2. Christmas is coming soon\n3. To"
-        " review\n4. ..."
+        "\nBelow is my vocabulary list that I want to test myself on.\nSelect"
+        " 50 vocabulary lines randomly and prompt me only with the English part such that I need to"
+        " recollect the Chinese translation.\nThe order of the English prompts should be"
+        " shuffled.\nThe test should be in the form of \n1. It's 22 dec today\n2. Christmas is"
+        " coming soon\n3. To review\n4. ...\nDo not ask me the same prompts more than once."
     )
     print("\nChinese Vocabulary:")
     for line in chinese_voc:
