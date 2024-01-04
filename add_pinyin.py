@@ -214,7 +214,7 @@ def main():
 
             update_markdown_files(chatgpt_output, files_and_lines_ref)
             markdown_filenames = ", ".join(
-                [file.split("/")[-1] for file in markdown_paths_to_be_updated]
+                set([file.split("/")[-1] for file in markdown_paths_to_be_updated])
             )
             log.write(
                 f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -"
