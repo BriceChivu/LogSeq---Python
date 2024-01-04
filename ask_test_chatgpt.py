@@ -1,6 +1,7 @@
 import os
 import re
 import argparse
+import pyperclip
 
 
 def extract_chinese_voc(line):
@@ -43,17 +44,17 @@ def main():
     args = parser.parse_args()
 
     chinese_voc = process_directory(args.path)
-    print(
+    lines_for_chatgpt = (
         "\nBelow is my vocabulary list that I want to test myself on.\nSelect"
         " 50 vocabulary lines randomly and prompt me only with the English part such that I need to"
         " recollect the Chinese translation.\nThe order of the English prompts should be"
         " shuffled.\nThe test should be in the form of \n1. It's 22 dec today\n2. Christmas is"
-        " coming soon\n3. To review\n4. ...\nDo not ask me the same prompts more than once."
-    )
-    print("\nChinese Vocabulary:")
+        " coming soon\n3. To review\n4. ...\nDo not ask me the same prompts more than once.\n\nChinese Vocabulary:\n")
     for line in chinese_voc:
-        print(line)
-    print(f"\nTotal number of Chinese vocabulary: {len(chinese_voc)}")
+        lines_for_chatgpt += line + "\n"
+    lines_for_chatgpt += f"\nTotal number of Chinese vocabulary: {len(chinese_voc)}"
+    print(lines_for_chatgpt)
+    pyperclip.copy(lines_for_chatgpt)
 
 
 if __name__ == "__main__":
