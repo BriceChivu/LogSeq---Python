@@ -1,5 +1,4 @@
 import os
-import shutil
 import re
 import argparse
 import datetime
@@ -7,9 +6,7 @@ from typing import Tuple
 import pyperclip
 
 # Constants for directory paths
-MARKDOWN_DIR = "/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals"
 PYTHON_SCRIPTS_DIR = "/Users/brice/Documents/LogSeq-GitHub/python"
-BACKUP_DIR = os.path.join(PYTHON_SCRIPTS_DIR, "bak")
 LOG_FILE = os.path.join(PYTHON_SCRIPTS_DIR, "change_log.log")
 
 
@@ -52,57 +49,6 @@ def get_all_chinese_lines_without_pinyin(
     return voc_lines, files_and_lines_ref
 
 
-def create_backup(
-    markdown_paths_to_be_updated: list,
-    copy_from_path: str,
-    copy_to_path: str,
-) -> None:
-    """
-    Create a backup of files based on a reference list of files and lines.
-    Args:
-        files_and_lines_ref (list[list[str, int]]): A list of lists containing file paths and corresponding line numbers.
-        copy_from_path (str): The directory path from which files will be copied.
-        copy_to_path (str): The directory path to which files will be copied for backup.
-    """
-    if not os.path.exists(copy_to_path):
-        os.makedirs(copy_to_path)
-    for filename in markdown_paths_to_be_updated:
-        if filename.endswith(".md"):
-            shutil.copy2(os.path.join(copy_from_path, filename), copy_to_path)
-
-
-def clear_bak_folder(path):
-    for filename in os.listdir(path):
-        file_path = os.path.join(path, filename)
-        try:
-            if os.path.isfile(file_path) or os.path.islink(file_path):
-                os.unlink(file_path)
-            elif os.path.isdir(file_path):
-                shutil.rmtree(file_path)
-        except Exception as e:
-            print(f"Failed to delete {file_path}. Reason: {e}")
-
-
-def revert_changes(copy_from_path: str, copy_to_path: str) -> None:
-    """
-    Revert changes made to files by copying them back from the backup directory.
-    Args:
-        copy_from_path (str): The backup directory path from which files will be copied.
-        copy_to_path (str): The original directory path to which files will be restored.
-    """
-    with open(LOG_FILE, "a") as log:
-        for filename in os.listdir(copy_from_path):
-            log.write(
-                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {filename} is being"
-                " reverted to previous version.\n"
-            )
-            print(
-                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - {filename} is being"
-                " reverted to previous version."
-            )
-            shutil.copy2(os.path.join(copy_from_path, filename), copy_to_path)
-
-
 def capture_indentation(text: str) -> str:
     """
     Capture the indentation used at the beginning of a given text.
@@ -125,6 +71,18 @@ def update_markdown_files(
         files_and_lines_ref (list[list[str, int]]): A list of file paths and corresponding line numbers where the updates will be made.
     """
     with open(LOG_FILE, "a") as log:
+        if len(chatgpt_output) != len(files_and_lines_ref):
+            message = (
+                "Error: The number of"
+                f" lines from ChatGPT ({len(chatgpt_output)}) does not match the number of"
+                f" references ({len(files_and_lines_ref)}).\n"
+                f"chatgpt_output:\n{chatgpt_output}\n"
+                f"files_and_lines_ref:\n{files_and_lines_ref}\n"
+                "Canceling the program.\n"
+            )
+            log.write(f'{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - {message}')
+            print(message)
+            exit()
         changes = list(zip(files_and_lines_ref, chatgpt_output))
         for (file_path, line_num), chatgpt_line in changes:
             filename = file_path.split("/")[-1]
@@ -174,54 +132,49 @@ def create_chatgpt_prompt(chinese_voc_no_pinyin: list) -> str:
 # Main function
 def main():
     parser = argparse.ArgumentParser(description="Update Markdown files with Pinyin.")
-    parser.add_argument("--revert", action="store_true", help="Revert to backup files. Can be combined with --path argument")
-    parser.add_argument(
-        "--path",
-        default="/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals",
-        help="Path to the directory containing Markdown files",
-    )
+    parser.add_argument("--test", action="store_true")
     args = parser.parse_args()
+    if args.test:
+        path_markdown_files = "/Users/brice/Documents/LogSeq-GitHub/python/test"
+    else:
+        path_markdown_files = "/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals"
 
     with open(LOG_FILE, "a") as log:
-        if args.revert:
-            revert_changes(BACKUP_DIR, args.path)
-        else:
-            clear_bak_folder(BACKUP_DIR)
-            chinese_voc_no_pinyin, files_and_lines_ref = get_all_chinese_lines_without_pinyin(
-                args.path
-            )
-            if not files_and_lines_ref:
-                log.write(
-                    f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - All voc already"
-                    " have pinyin.\n"
-                )
-                print("All voc already have pinyin.\n")
-                exit()
-            markdown_paths_to_be_updated = [sublist[0] for sublist in files_and_lines_ref]
-            create_backup(markdown_paths_to_be_updated, args.path, BACKUP_DIR)
-            text_prompt_to_chatgpt = create_chatgpt_prompt(chinese_voc_no_pinyin)
-            pyperclip.copy(text_prompt_to_chatgpt)
-
-            # 2nd step: pasting the ChatGPT output
-            chatgpt_output = []
-            print("\nCmd + v in ChatGPT.")
-            print("Now, paste the output of ChatGPT here:")
-            while True:
-                line = input()
-                if line == "":
-                    break
-                chatgpt_output.append(line)
-
-            # Replacement of lines
-            update_markdown_files(chatgpt_output, files_and_lines_ref)
-            markdown_filenames = ", ".join(
-                set([file.split("/")[-1] for file in markdown_paths_to_be_updated])
-            )
+        (
+            chinese_voc_no_pinyin,
+            files_and_lines_ref,
+        ) = get_all_chinese_lines_without_pinyin(path_markdown_files)
+        if not files_and_lines_ref:
             log.write(
-                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -"
-                f" {markdown_filenames} files updated with Pinyin.\n"
+                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - All voc already"
+                " have pinyin.\n"
             )
-            print(f"{markdown_filenames} files updated with Pinyin.")
+            print("All voc already have pinyin.\n")
+            exit()
+        text_prompt_to_chatgpt = create_chatgpt_prompt(chinese_voc_no_pinyin)
+        pyperclip.copy(text_prompt_to_chatgpt)
+
+        # 2nd step: pasting the ChatGPT output
+        chatgpt_output = []
+        print("\nCmd + v in ChatGPT.")
+        print("Now, paste the output of ChatGPT here:")
+        while True:
+            line = input()
+            if line == "":
+                break
+            chatgpt_output.append(line)
+
+        # Replacement of lines
+        update_markdown_files(chatgpt_output, files_and_lines_ref)
+        markdown_paths_to_be_updated = [sublist[0] for sublist in files_and_lines_ref]
+        markdown_filenames = ", ".join(
+            set([file.split("/")[-1] for file in markdown_paths_to_be_updated])
+        )
+        log.write(
+            f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} -"
+            f" {markdown_filenames} files updated with Pinyin.\n"
+        )
+        print(f"{markdown_filenames} files updated with Pinyin.")
         log.write("\n")
 
 
@@ -229,11 +182,8 @@ if __name__ == "__main__":
     main()
 
 
-
 # Functionality
-# TODO: log in revert changes should say exactly what got reverted (IS REVERT REALLY USEFUL SINCE WE HAVE EVERYTHING TRACKED IN GIT?)
-# TODO: verify that the ChatGPT output number of lines is the same as the number of voc without pinyin
-# TODO: Create new test for chatgpt based on theme
+# TODO: Create new test python script for chatgpt based on theme, e.g.:
 # Give me all the vocabulary related to negativity (emotions, actions, etc.) among my voc list below.
 # Do not change anything, just give me the negative Chinese voc lines.
 # Do not add anything that is not in the list
@@ -241,5 +191,3 @@ if __name__ == "__main__":
 # Cleaning
 # TODO: create helpers.py and consolidate some functions used accross add_pinyin and ask_test_chatgpt
 # TODO: do the tests
-
-
