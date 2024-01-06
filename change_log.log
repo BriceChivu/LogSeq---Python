@@ -456,3 +456,31 @@ dummy.md is being reverted to previous version.2023-12-31 19:33:30 - Reverted ch
 2024-01-04 09:47:55 - Replaced "- 无聊：boring, bored" with "无聊 (wúliáo): boring, bored" in 2024_01_04.md, line 34
 2024-01-04 09:47:55 - 2024_01_03.md, 2024_01_04.md files updated with Pinyin.
 
+2024-01-06 15:06:56 - Replaced "- 压力：pressure" with "压力 (yālì): pressure" in 2024_01_05.md, line 7
+2024-01-06 15:06:57 - Replaced "- 吃到：to arrive late" with "吃到 (chídào): to arrive late" in 2024_01_05.md, line 8
+2024-01-06 15:06:57 - Replaced "- 复杂：complex，complicated" with "复杂 (fùzá): complex, complicated" in 2024_01_05.md, line 9
+2024-01-06 15:06:57 - Replaced "- 蛇：snake" with "蛇 (shé): snake" in 2024_01_05.md, line 10
+2024-01-06 15:06:57 - Replaced "- 安慰：to comfort, console" with "安慰 (ānwèi): to comfort, console" in 2024_01_05.md, line 11
+2024-01-06 15:06:57 - Replaced "- 满足：to satisfy, to meet the needs of" with "满足 (mǎnzú): to satisfy, to meet the needs of" in 2024_01_05.md, line 12
+2024-01-06 15:06:57 - Replaced "- 数量：the amount, quantity" with "数量 (shùliàng): the amount, quantity" in 2024_01_05.md, line 13
+2024-01-06 15:06:57 - Replaced "- 分析：to analyze, analysis" with "分析 (fēnxī): to analyze, analysis" in 2024_01_05.md, line 14
+2024-01-06 15:06:57 - Replaced "- 社会：society" with "社会 (shèhuì): society" in 2024_01_05.md, line 15
+2024-01-06 15:06:57 - Replaced "- 职业：occupation, profession" with "职业 (zhíyè): occupation, profession" in 2024_01_05.md, line 16
+2024-01-06 15:06:57 - Replaced "- 租房：to rent an apartment" with "租房 (zūfáng): to rent an apartment" in 2024_01_05.md, line 17
+2024-01-06 15:06:57 - Replaced "- 机构：organization, agency" with "机构 (jīgòu): organization, agency" in 2024_01_05.md, line 18
+2024-01-06 15:06:57 - Replaced "- 翻译：to translate" with "翻译 (fānyì): to translate" in 2024_01_05.md, line 19
+2024-01-06 15:06:57 - Replaced "- 法律：law" with "法律 (fǎlǜ): law" in 2024_01_05.md, line 20
+2024-01-06 15:06:57 - Replaced "- 语言：language" with "语言 (yǔyán): language" in 2024_01_05.md, line 21
+2024-01-06 15:06:57 - Replaced "- 内容：content" with "内容 (nèiróng): content" in 2024_01_05.md, line 22
+2024-01-06 15:06:57 - Replaced "- 费用：cost, expense" with "费用 (fèiyòng): cost, expense" in 2024_01_05.md, line 23
+2024-01-06 15:06:57 - 2024_01_05.md files updated with Pinyin.
+
+2024-01-06 15:28:14 - Error: The number of lines from ChatGPT (6) does not match the number of references (7).
+Canceling the program.2024-01-06 15:29:52 - All voc already have pinyin.
+2024-01-06 15:47:13 - Error: The number of lines from ChatGPT (6) does not match the number of references (7).
+chatgpt_output:
+['你好 (nǐ hǎo): hello', '你好 (nǐ hǎo): hello', '我住在北京市 (wǒ zhù zài Běijīng shì)。', '讲到 (jiǎng dào), 说起 (shuō qǐ): to talk about', '我经常编程 (wǒ jīngcháng biānchéng)。', '如何 (rúhé): how']
+files_and_lines_ref:
+[['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 2], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 4], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 5], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 7], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 8], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 10], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 11]]
+Canceling the program.
+2024-01-06 15:56:16 - All voc already have pinyin.

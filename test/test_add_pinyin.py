@@ -72,9 +72,6 @@ def test_get_all_chinese_lines_without_pinyin():
     assert files_and_lines_ref == expected_files_and_lines_ref
 
 
-# TODO: continue testing from create_backup()
-
-
 # Test for update_markdown_files function
 def test_update_markdown_files():
     test_dir = "/Users/brice/Documents/LogSeq-GitHub/python/test"
