@@ -49,7 +49,8 @@ def main():
         " 50 vocabulary lines randomly and prompt me only with the English part such that I need to"
         " recollect the Chinese translation.\nThe order of the English prompts should be"
         " shuffled.\nThe test should be in the form of \n1. It's 22 dec today\n2. Christmas is"
-        " coming soon\n3. To review\n4. ...\nDo not ask me the same prompts more than once.\n\nChinese Vocabulary:\n")
+        " coming soon\n3. To review\n4. ...\nDo not ask me the same prompts more than once.\n\nChinese Vocabulary:\n"
+    )
     for line in chinese_voc:
         lines_for_chatgpt += line + "\n"
     lines_for_chatgpt += f"\nTotal number of Chinese vocabulary: {len(chinese_voc)}"
