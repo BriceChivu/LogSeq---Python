@@ -174,7 +174,7 @@ def create_chatgpt_prompt(chinese_voc_no_pinyin: list) -> str:
 # Main function
 def main():
     parser = argparse.ArgumentParser(description="Update Markdown files with Pinyin.")
-    parser.add_argument("--revert", action="store_true", help="Revert to backup files")
+    parser.add_argument("--revert", action="store_true", help="Revert to backup files. Can be combined with --path argument")
     parser.add_argument(
         "--path",
         default="/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals",
@@ -212,6 +212,7 @@ def main():
                     break
                 chatgpt_output.append(line)
 
+            # Replacement of lines
             update_markdown_files(chatgpt_output, files_and_lines_ref)
             markdown_filenames = ", ".join(
                 set([file.split("/")[-1] for file in markdown_paths_to_be_updated])
@@ -228,6 +229,17 @@ if __name__ == "__main__":
     main()
 
 
-# TODO: do the tests
-# TODO: log in revert changes should say exactly what got reverted
+
+# Functionality
+# TODO: log in revert changes should say exactly what got reverted (IS REVERT REALLY USEFUL SINCE WE HAVE EVERYTHING TRACKED IN GIT?)
 # TODO: verify that the ChatGPT output number of lines is the same as the number of voc without pinyin
+# TODO: Create new test for chatgpt based on theme
+# Give me all the vocabulary related to negativity (emotions, actions, etc.) among my voc list below.
+# Do not change anything, just give me the negative Chinese voc lines.
+# Do not add anything that is not in the list
+
+# Cleaning
+# TODO: create helpers.py and consolidate some functions used accross add_pinyin and ask_test_chatgpt
+# TODO: do the tests
+
+
