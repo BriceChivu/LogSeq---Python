@@ -484,3 +484,237 @@ files_and_lines_ref:
 [['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 2], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 4], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 5], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 7], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 8], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 10], ['/Users/brice/Documents/LogSeq-GitHub/python/test/dummy.md', 11]]
 Canceling the program.
 2024-01-06 15:56:16 - All voc already have pinyin.
+2024-01-06 22:48:34 - Replaced "- 蔬菜：vegetable" with "蔬菜 (shūcài): vegetable" in 2024_01_06.md, line 27
+2024-01-06 22:48:34 - Replaced "- 下班：to get off work" with "下班 (xiàbān): to get off work" in 2024_01_06.md, line 28
+2024-01-06 22:48:34 - Replaced "- to meet (new people): 遇到" with "遇到 (yùdào): to meet (new people)" in 2024_01_06.md, line 29
+2024-01-06 22:48:34 - Replaced "- 必不可少的：necessary" with "必不可少的 (bì bù kě shǎo de): necessary" in 2024_01_06.md, line 30
+2024-01-06 22:48:34 - Replaced "- 他们都是必不可少的" with "他们都是必不可少的 (tāmen dōu shì bì bù kě shǎo de): they are all necessary" in 2024_01_06.md, line 31
+2024-01-06 22:48:34 - Replaced "- 一般来说：generally speaking" with "一般来说 (yībān lái shuō): generally speaking" in 2024_01_06.md, line 32
+2024-01-06 22:48:34 - Replaced "- 麻烦：inconvenient, troublesome" with "麻烦 (máfan): inconvenient, troublesome" in 2024_01_06.md, line 33
+2024-01-06 22:48:34 - Replaced "- to fix: 修理" with "修理 (xiūlǐ): to fix" in 2024_01_06.md, line 34
+2024-01-06 22:48:34 - Replaced "- 空调：air conditioning" with "空调 (kōngtiáo): air conditioning" in 2024_01_06.md, line 35
+2024-01-06 22:48:34 - Replaced "- 讨论：to discuss, to talk over" with "讨论 (tǎolùn): to discuss, to talk over" in 2024_01_06.md, line 36
+2024-01-06 22:48:34 - Replaced "- 合适：suitable" with "合适 (héshì): suitable" in 2024_01_06.md, line 37
+2024-01-06 22:48:34 - 2024_01_06.md files updated with Pinyin.
+
+2024-01-07 00:08:16 - Replaced "- 薪水 ， 收入: salary" with "薪水, 收入 (xīnshuǐ, shōurù): salary" in 2023_12_31.md, line 10
+2024-01-07 00:08:16 - Replaced "- 普通：ordinary" with "普通 (pǔtōng): ordinary" in 2023_12_31.md, line 12
+2024-01-07 00:08:16 - Replaced "- 长相：appearance，looks" with "长相 (zhǎngxiàng): appearance, looks" in 2023_12_31.md, line 13
+2024-01-07 00:08:16 - Replaced "- 憧憬：to look for, to look forward to" with "憧憬 (chōngjǐng): to look for, to look forward to" in 2023_12_31.md, line 14
+2024-01-07 00:08:16 - Replaced "- 优秀：outstanding, excellent" with "优秀 (yōuxiù): outstanding, excellent" in 2023_12_31.md, line 15
+2024-01-07 00:08:16 - Replaced "- 尤其是：especially" with "尤其是 (yóuqí shì): especially" in 2023_12_31.md, line 16
+2024-01-07 00:08:16 - Replaced "- 浪漫：romantic" with "浪漫 (làngmàn): romantic" in 2023_12_31.md, line 17
+2024-01-07 00:08:16 - Replaced "- 避免：to avoid, to prevent" with "避免 (bìmiǎn): to avoid, to prevent" in 2023_12_31.md, line 18
+2024-01-07 00:08:16 - Replaced "- 独生子女：an only child" with "独生子女 (dúshēng zǐnǚ): an only child" in 2023_12_31.md, line 19
+2024-01-07 00:08:16 - Replaced "- 供养：to provide/support for one's parents" with "供养 (gōngyǎng): to provide/support for one's parents" in 2023_12_31.md, line 20
+2024-01-07 00:08:16 - Replaced "- 经济：economy, economic" with "经济 (jīngjì): economy, economic" in 2023_12_31.md, line 21
+2024-01-07 00:08:16 - Replaced "- 跑题：to digress, to slide away from the topic" with "跑题 (pǎotí): to digress, to slide away from the topic" in 2023_12_31.md, line 22
+2024-01-07 00:08:16 - Replaced "- 胖子：a fat person" with "胖子 (pàngzi): a fat person" in 2023_12_31.md, line 23
+2024-01-07 00:08:16 - Replaced "- 肚腩：belly" with "肚腩 (dùnán): belly" in 2023_12_31.md, line 24
+2024-01-07 00:08:16 - Replaced "- 眼镜：glasses" with "眼镜 (yǎnjìng): glasses" in 2023_12_31.md, line 25
+2024-01-07 00:08:16 - Replaced "- 肥，胖：fat (adj.)" with "肥, 胖 (féi, pàng): fat (adj.)" in 2023_12_31.md, line 26
+2024-01-07 00:08:16 - 2023_12_31.md files updated with Pinyin.
+
+2024-01-07 11:37:07 - Replaced "- 今天他们收到了我寄给他们的明信片。" with "今天他们收到了我寄给他们的明信片。 (Jīntiān tāmen shōudàole wǒ jì gěi tāmen de míngxìnpiàn): Today they received the postcard I sent them." in 2023_12_27.md, line 6
+2024-01-07 11:37:07 - Replaced "- 健康：healthy, health" with "健康 (jiànkāng): healthy, health" in 2024_01_07.md, line 2
+2024-01-07 11:37:07 - Replaced "- 明确：to specify, define, make concrete" with "明确 (míngquè): to specify, define, make concrete" in 2024_01_07.md, line 3
+2024-01-07 11:37:07 - Replaced "- 删除，取消，作废：to cancel" with "删除 (shānchú)，取消 (qǔxiāo)，作废 (zuòfèi): to cancel" in 2024_01_07.md, line 4
+2024-01-07 11:37:07 - 2023_12_27.md, 2024_01_07.md files updated with Pinyin.
+
+2024-01-08 11:16:43 - Error: The number of lines from ChatGPT (4) does not match the number of references (21).
+chatgpt_output:
+['从她爷爷家也接过来一块住 (cóng tā yéye jiā yě jiē guò lái yī kuài zhù)', '哈罗，我是Brice，一个学习中文的法国人。我正在找一个中国母语者可以帮我练习中文。我希望每个礼拜打电话聊天2-3次。那我也可以教你法文～你怎么看？ (hā luó, wǒ shì Brice, yī gè xuéxí Zhōngwén de Fǎguórén. Wǒ zhèngzài zhǎo yī gè Zhōngguó mǔyǔ zhě kěyǐ bāng wǒ liànxí Zhōngwén. Wǒ xīwàng měi gè lǐbài dǎ diànhuà liáotiān 2-3 cì. Nà wǒ yě kěyǐ jiāo nǐ Fǎwén～ nǐ zěnme kàn?)', '你想让我__你的句子吗？❌ #card (nǐ xiǎng ràng wǒ __ nǐ de jùzi ma? ❌ #card)', '你想让我纠正你的句子吗？ (nǐ xiǎng ràng wǒ jiūzhèng nǐ de jùzi ma?)']
+files_and_lines_ref:
+[['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 23], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 24], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 25], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 26], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 27], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 28], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 29], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 35], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 36], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 37], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 38], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 39], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 40], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 41], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 42], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_07.md', 43], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_08.md', 9], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_08.md', 10], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_08.md', 11], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_08.md', 12], ['/Users/brice/Documents/LogSeq-GitHub/LogSeq-GitHub/journals/2024_01_08.md', 13]]
+Canceling the program.
+2024-01-08 11:53:55 - Replaced "- 你想让我**纠正**你的句子吗？" with "你想让我纠正你的句子吗？ (nǐ xiǎng ràng wǒ jiūzhèng nǐ de jùzi ma?)" in 2024_01_08.md, line 16
+2024-01-08 11:53:55 - Replaced "- 目前我的法语**语法**和词汇都比较有限，我会努力学的。" with "目前我的法语语法和词汇都比较有限，我会努力学的。 (mùqián wǒ de fǎyǔ yǔfǎ hé cíhuì dōu bǐjiào yǒuxiàn, wǒ huì nǔlì xué de.)" in 2024_01_08.md, line 18
+2024-01-08 11:53:55 - 2024_01_08.md files updated with Pinyin.
+
+2024-01-08 12:05:12 - Replaced "- 你想让我**纠正**你的句子吗？" with "- 你想让我**纠正**你的句子吗？ (nǐ xiǎng ràng wǒ **jiūzhèng** nǐ de jùzi ma?)" in 2024_01_08.md, line 16
+2024-01-08 12:05:12 - 2024_01_08.md files updated with Pinyin.
+
+2024-01-08 12:08:28 - Replaced "- 你想让我**纠正**你的句子吗？" with "- 你想让我**纠正**你的句子吗？ (nǐ xiǎng ràng wǒ **jiūzhèng** nǐ de jùzi ma?)" in 2024_01_08.md, line 16
+2024-01-08 12:08:28 - 2024_01_08.md files updated with Pinyin.
+
+2024-01-08 15:00:47 - Error: The number of lines from ChatGPT (5) does not match the number of references (4).
+Canceling the program.
+2024-01-08 15:00:54 - Error: The number of lines from ChatGPT (2) does not match the number of references (4).
+Canceling the program.
+2024-01-08 15:01:19 - Replaced "- 你想让我**纠正**你的句子吗？" with "你想让我**纠正**你的句子吗？ (nǐ xiǎng ràng wǒ **jiūzhèng** nǐ de jùzi ma?)" in 2024_01_08.md, line 16
+2024-01-08 15:01:19 - Replaced "- 我正在找一个中国母语者可以帮我练习中文。" with "我正在找一个中国母语者可以帮我练习中文。 (wǒ zhèngzài zhǎo yī gè zhōngguó mǔyǔ zhě kěyǐ bāng wǒ liànxí zhōngwén.)" in 2024_01_08.md, line 20
+2024-01-08 15:01:19 - Replaced "- 我5-6年以前开始自学中文但是学习太多了，感到**筋疲力尽**。" with "我5-6年以前开始自学中文但是学习太多了，感到**筋疲力尽**。 (wǒ 5-6 nián yǐqián kāishǐ zìxué zhōngwén dànshì xuéxí tài duō le, gǎndào **jīn pí lì jìn**.)" in 2024_01_08.md, line 22
+2024-01-08 15:01:19 - Replaced "- 你可以用中文语音回答我的问题，然后我会给你**反馈**。" with "你可以用中文语音回答我的问题，然后我会给你**反馈**。 (nǐ kěyǐ yòng zhōngwén yǔyīn huídá wǒ de wèntí, ránhòu wǒ huì gěi nǐ **fǎnkuì**.)" in 2024_01_08.md, line 25
+2024-01-08 15:01:19 - 2024_01_08.md files updated with Pinyin.
+
+2024-01-08 20:56:27 - Replaced "- 我之前已经学过中文，不想**半途而废**。" with "我之前已经学过中文，不想**半途而废**。 (wǒ zhīqián yǐjīng xuéguò zhōngwén, bùxiǎng **bàntú'érfèi**.)" in 2024_01_08.md, line 52
+2024-01-08 20:56:27 - 2024_01_08.md files updated with Pinyin.
+
+2024-01-09 08:56:33 - Replaced "- 注意 , 注重：to pay attention to" with "注意 , 注重 (zhùyì, zhùzhòng)" in 2023_12_27.md, line 19
+2024-01-09 08:56:33 - Replaced "- 我不知道为什么最近几天我的**过敏**症状突然**发作**了。" with "我不知道为什么最近几天我的**过敏**症状突然**发作**了。 (wǒ bù zhīdào wèishéme zuìjìn jǐ tiān wǒ de **guòmǐn** zhèngzhuàng tūrán **fāzuò** le.)" in 2024_01_08.md, line 59
+2024-01-09 08:56:33 - Replaced "- 这最后几天**下**了**很多雨**，引起**消沉**。" with "这最后几天**下**了**很多雨**，引起**消沉**。 (zhè zuìhòu jǐ tiān **xià** le **hěn duō yǔ**, yǐnqǐ **xiāochén**.)" in 2024_01_08.md, line 62
+2024-01-09 08:56:33 - Replaced "- 在我的电脑上，我**追踪**我的进步。" with "在我的电脑上，我**追踪**我的进步。 (zài wǒ de diànnǎo shàng, wǒ **zhuīzōng** wǒ de jìnbù.)" in 2024_01_08.md, line 64
+2024-01-09 08:56:33 - 2023_12_27.md, 2024_01_08.md files updated with Pinyin.
+
+2024-01-09 11:03:39 - Replaced "- 你想让我 {{cloze 纠正}} 你的句子吗？❌ ✅#card" with "你想让我 {{cloze 纠正}} 你的句子吗？{{cloze nǐ xiǎng ràng wǒ jiūzhèng nǐ de jùzi ma?}} ❌ ✅#card" in 2024_01_08.md, line 9
+2024-01-09 11:03:39 - Replaced "- 目前我的法语 {{cloze 语法}} 和词汇都比较有限，我会努力学的。 #card ![Grammarly vs. Grammarly Premium Review: Which is Better?](https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/Grammarly-vs-Grammarly-Premium.jpg?fit=1200%2C666&ssl=1)" with "目前我的法语 {{cloze 语法}} 和词汇都比较有限，我会努力学的。{{cloze mùqián wǒ de fǎyǔ yǔfǎ hé cíhuì dōu bǐjiào yǒuxiàn, wǒ huì nǔlì xué de.}} #card ![Grammarly vs. Grammarly Premium Review: Which is Better?](https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/Grammarly-vs-Grammarly-Premium.jpg?fit=1200%2C666&ssl=1)" in 2024_01_08.md, line 10
+2024-01-09 11:03:39 - Replaced "- 我正在找一个中国 {{cloze 母语者}} 可以帮我练习中文。#card" with "我正在找一个中国 {{cloze 母语者}} 可以帮我练习中文。{{cloze wǒ zhèngzài zhǎo yīgè zhōngguó mǔyǔ zhě kěyǐ bāng wǒ liànxí zhōngwén.}}#card" in 2024_01_08.md, line 11
+2024-01-09 11:03:39 - Replaced "- 我5-6年以前开始自学中文但是学习太多了，感到 {{cloze 筋疲力尽}} 。#card" with "我5-6年以前开始自学中文但是学习太多了，感到 {{cloze 筋疲力尽}} 。{{cloze wǒ wǔ liù nián yǐqián kāishǐ zìxué zhōngwén dànshì xuéxí tài duōle, gǎndào jīn pí lì jìn.}}#card" in 2024_01_08.md, line 12
+2024-01-09 11:03:39 - Replaced "- 你可以用中文语音回答我的问题，然后我会给你 {{cloze 反馈}} 。 #card" with "你可以用中文语音回答我的问题，然后我会给你 {{cloze 反馈}} 。 {{cloze nǐ kěyǐ yòng zhōngwén yǔyīn huídá wǒ de wèntí, ránhòu wǒ huì gěi nǐ fǎnkuì.}} #card" in 2024_01_08.md, line 13
+2024-01-09 11:03:39 - Replaced "- 我之前已经学过中文，不想 {{cloze 半途而废}} 。 #card" with "我之前已经学过中文，不想 {{cloze 半途而废}} 。 {{cloze wǒ zhīqián yǐjīng xuéguò zhōngwén, bùxiǎng bàntú'érfèi.}} #card" in 2024_01_08.md, line 14
+2024-01-09 11:03:39 - Replaced "- 我今天本来打算去看James但是他刚刚给我发了一条信息说 {{cloze 取消}} 了。❌ #card" with "我今天本来打算去看James但是他刚刚给我发了一条信息说 {{cloze 取消}} 了。{{cloze wǒ jīntiān běnlái dǎsuàn qù kàn James dànshì tā gānggāng gěi wǒ fāle yītiáo xìnxī shuō qǔxiāo le.}}❌ #card" in 2024_01_08.md, line 35
+2024-01-09 11:03:39 - Replaced "- 这最后几天 {{cloze 下}} 了 {{cloze 很多雨}} ，引起 {{cloze 消沉}} #card 🌧️ 🙁" with "这最后几天 {{cloze 下}} 了 {{cloze 很多雨}} ，引起 {{cloze 消沉}} {{cloze zhè zuìhòu jǐ tiān xià le hěn duō yǔ, yǐnqǐ xiāochén}} #card 🌧️ 🙁" in 2024_01_08.md, line 42
+2024-01-09 11:03:39 - Replaced "- 在我的电脑上，我 {{cloze 追踪}} 我的进步。🖥️ 📈 🔍️ #card" with "在我的电脑上，我 {{cloze 追踪}} 我的进步。{{cloze zài wǒ de diànnǎo shàng, wǒ zhuīzōng wǒ de jìnbù.}}🖥️ 📈 🔍️ #card" in 2024_01_08.md, line 43
+2024-01-09 11:03:39 - Replaced "- 我每个礼拜尝试读三篇 {{cloze 文章}} 。📑  #card" with "我每个礼拜尝试读三篇 {{cloze 文章}} 。{{cloze wǒ měi gè lǐbài chángshì dú sān piān wénzhāng.}}📑  #card" in 2024_01_08.md, line 44
+2024-01-09 11:03:39 - Replaced "- 那些人都不 {{cloze 注重}} 自己的形象。 🤷‍♂️ #card" with "那些人都不 {{cloze 注重}} 自己的形象。{{cloze nàxiē rén dōu bù zhùzhòng zìjǐ de xíngxiàng}} 🤷‍♂️ #card" in 2024_01_08.md, line 51
+2024-01-09 11:03:39 - Replaced "- 现在女生已经可以做到 {{cloze 经济独立}}了。#card" with "现在女生已经可以做到 {{cloze 经济独立}}了。{{cloze xiànzài nǚshēng yǐjīng kěyǐ zuò dào jīngjì dúlì le.}}#card" in 2024_01_08.md, line 58
+2024-01-09 11:03:39 - Replaced "- 在大部分的中国女生的定义里面，男生的作用就是 {{cloze 挣钱养家}}。 💰️ 💵 #card" with "在大部分的中国女生的定义里面，男生的作用就是 {{cloze 挣钱养家}}。{{cloze zài dà bùfèn de zhōngguó nǚshēng de dìngyì lǐmiàn, nánshēng de zuòyòng jiùshì zhèng qián yǎngjiā.}} 💰️ 💵 #card" in 2024_01_08.md, line 65
+2024-01-09 11:03:39 - 2024_01_08.md files updated with Pinyin.
+
+2024-01-09 11:18:48 - Replaced "- 这最后几天 {{cloze 下}} 了 {{cloze 很多雨}} ，引起 {{cloze 消沉}}。 #card 🌧️ 🙁" with "这最后几天 {{cloze 下}} 了 {{cloze 很多雨}} ，引起 {{cloze 消沉}}。{{cloze zhè zuìhòu jǐ tiān xià le hěnduō yǔ, yǐnqǐ xiāochén.}} #card 🌧️ 🙁" in 2024_01_08.md, line 42
+2024-01-09 11:18:48 - 2024_01_08.md files updated with Pinyin.
+
+2024-01-09 21:19:52 - Replaced "- 我正在找一个中国 {{cloze 母语者}} 可以帮我练习中文。#card" with "我正在找一个中国 {{cloze 母语者}} 可以帮我练习中文。 {{cloze wǒ zhèngzài zhǎo yīgè Zhōngguó mǔyǔzhě kěyǐ bāng wǒ liànxí Zhōngwén.}} #card" in 2024_01_08.md, line 11
+2024-01-09 21:19:52 - Replaced "- 我今天本来打算去看James但是他刚刚给我发了一条信息说 {{cloze 取消}} 了。 ❌ #card" with "我今天本来打算去看James但是他刚刚给我发了一条信息说 {{cloze 取消}} 了。 {{cloze wǒ jīntiān běnlái dǎsuàn qù kàn James dànshì tā gānggāng gěi wǒ fā le yī tiáo xìnxī shuō qǔxiāo le.}} ❌ #card" in 2024_01_08.md, line 47
+2024-01-09 21:19:52 - Replaced "- 这最后几天 {{cloze 下}} 了 {{cloze 很多雨}} ，引起 {{cloze 消沉}}。#card 🌧️ 🙁" with "这最后几天 {{cloze 下}} 了 {{cloze 很多雨}} ，引起 {{cloze 消沉}}。 {{cloze zhè zuìhòu jǐ tiān xià le hěnduō yǔ, yǐnqǐ xiāochén.}} 🌧️ 🙁 #card" in 2024_01_08.md, line 54
+2024-01-09 21:19:52 - Replaced "- 在我的电脑上，我 {{cloze 追踪}} 我的进步。 🖥️ 📈 🔍️ #card" with "在我的电脑上，我 {{cloze 追踪}} 我的进步。 {{cloze zài wǒ de diànnǎo shàng, wǒ zhuīzōng wǒ de jìnbù.}} 🖥️ 📈 🔍️ #card" in 2024_01_08.md, line 55
+2024-01-09 21:19:52 - Replaced "- 我每个礼拜尝试读三篇 {{cloze 文章}} 。 📑  #card" with "我每个礼拜尝试读三篇 {{cloze 文章}} 。 {{cloze wǒ měi gè lǐbài chángshì dú sān piān wénzhāng.}} 📑  #card" in 2024_01_08.md, line 56
+2024-01-09 21:19:52 - Replaced "- 那些人都不 {{cloze 注重}} 自己的形象。 #card 🤷‍♂️" with "那些人都不 {{cloze 注重}} 自己的形象。 {{cloze nàxiē rén dōu bù zhùzhòng zìjǐ de xíngxiàng.}} 🤷‍♂️ #card" in 2024_01_08.md, line 63
+2024-01-09 21:19:52 - Replaced "- 现在女生已经可以做到 {{cloze 经济独立}}了。#card" with "现在女生已经可以做到 {{cloze 经济独立}} 了。 {{cloze xiànzài nǚshēng yǐjīng kěyǐ zuòdào jīngjì dúlì le.}} #card" in 2024_01_08.md, line 70
+2024-01-09 21:19:52 - Replaced "- 在大部分的中国女生的定义里面，男生的作用就是 {{cloze 挣钱养家}}。💰️ 💵 #card" with "在大部分的中国女生的定义里面，男生的作用就是 {{cloze 挣钱养家}}。 {{cloze zài dà bùfèn de Zhōngguó nǚshēng de dìngyì lǐmiàn, nánshēng de zuòyòng jiùshì zhèng qián yǎngjiā.}} 💰️ 💵 #card" in 2024_01_08.md, line 77
+2024-01-09 21:19:52 - Replaced "- 我目前的中文很 {{cloze 差}} 。#card" with "我目前的中文很 {{cloze 差}} 。 {{cloze wǒ mùqián de Zhōngwén hěn chà.}} #card" in 2024_01_09.md, line 2
+2024-01-09 21:19:52 - 2024_01_08.md, 2024_01_09.md files updated with Pinyin.
+
+2024-01-09 23:33:06 - Replaced "- 这个句子基本上是 {{cloze 正确}} 的，但是有一点点不自然。#card 🆗" with "这个句子基本上是 {{cloze 正确}} 的，但是有一点点不自然。 {{cloze zhège jùzi jīběn shàng shì zhèngquè de, dànshì yǒu yīdiǎndiǎn bù zìrán.}} #card 🆗" in 2024_01_09.md, line 3
+2024-01-09 23:33:06 - Replaced "- 我们可以稍微修改一下，让他听起来更 {{cloze 流畅}} 一些。#card" with "我们可以稍微修改一下，让他听起来更 {{cloze 流畅}} 一些。 {{cloze wǒmen kěyǐ shāowēi xiūgǎi yīxià, ràng tā tīng qǐlái gèng liúchàng yīxiē.}} #card" in 2024_01_09.md, line 4
+2024-01-09 23:33:06 - Replaced "- 你可以解释你为什么在你的第一个 {{cloze 语音}} 信息中用那个词吗？#card 🔊" with "你可以解释你为什么在你的第一个 {{cloze 语音}} 信息中用那个词吗？ {{cloze nǐ kěyǐ jiěshì nǐ wèishéme zài nǐ de dì yīgè yǔyīn xìnxī zhōng yòng nàgè cí ma?}} #card 🔊" in 2024_01_09.md, line 5
+2024-01-09 23:33:06 - Replaced "- 我的中文肯定没有英文那么 {{cloze 熟悉}}。 #card ～～" with "我的中文肯定没有英文那么 {{cloze 熟悉}}。 {{cloze wǒ de zhōngwén kěndìng méiyǒu yīngwén nàme shúxī.}} #card ～～" in 2024_01_09.md, line 6
+2024-01-09 23:33:06 - 2024_01_09.md files updated with Pinyin.
+
+2024-01-09 23:43:43 - Replaced "- 我们可以稍微修改/改进一下，让他听起来更 {{cloze 流畅}} 一些。  #card" with "我们可以稍微修改/改进一下，让他听起来更 {{cloze 流畅}} 一些。 {{cloze wǒmen kěyǐ shāowēi xiūgǎi/gǎijìn yīxià, ràng tā tīng qǐlái gèng liúchàng yīxiē.}}  #card" in 2024_01_09.md, line 4
+2024-01-09 23:43:43 - Replaced "- 我在我的工作经常编程，所以我常常 {{cloze 修复漏洞}} 。 #card 🐛 🪲" with "我在我的工作经常编程，所以我常常 {{cloze 修复漏洞}} 。 {{cloze wǒ zài wǒ de gōngzuò jīngcháng biānchéng, suǒyǐ wǒ chángcháng xiūfù lòudòng.}} #card 🐛 🪲" in 2024_01_09.md, line 7
+2024-01-09 23:43:43 - 2024_01_09.md files updated with Pinyin.
+
+2024-01-11 22:21:20 - Replaced "- 我有两个预言 {{cloze 伙伴}} 。我觉得跟他们聊天很有用。#card" with "我有两个预言 {{cloze 伙伴}} 。我觉得跟他们聊天很有用。 {{cloze wǒ yǒu liǎng gè yùyán huǒbàn. wǒ juéde gēn tāmen liáotiān hěn yǒuyòng.}} #card" in 2024_01_09.md, line 14
+2024-01-11 22:21:20 - Replaced "- 我知道世界上所有国家在 {{cloze 地图}} 上的 {{cloze 位置}} 。#card 🗺️ 🌍️ 📍" with "我知道世界上所有国家在 {{cloze 地图}} 上的 {{cloze 位置}} 。 {{cloze wǒ zhīdào shìjiè shàng suǒyǒu guójiā zài dìtú shàng de wèizhì.}} #card 🗺️ 🌍️ 📍" in 2024_01_09.md, line 15
+2024-01-11 22:21:20 - Replaced "- 如果我有这个 {{cloze 能力}} 自己挣钱养家的话，我不需要男生。#card" with "如果我有这个 {{cloze 能力}} 自己挣钱养家的话，我不需要男生。 {{cloze rúguǒ wǒ yǒu zhège nénglì zìjǐ zhèng qián yǎngjiā de huà, wǒ bù xūyào nánshēng.}} #card" in 2024_01_09.md, line 16
+2024-01-11 22:21:20 - Replaced "- 我编程了一个Python {{cloze 脚本}} 。#card" with "我编程了一个Python {{cloze 脚本}} 。 {{cloze wǒ biānchéng le yī gè Python jiǎoběn.}} #card" in 2024_01_10.md, line 5
+2024-01-11 22:21:20 - Replaced "- 我觉得你说的事情非常 {{cloze 有道理}} 。#card" with "我觉得你说的事情非常 {{cloze 有道理}} 。 {{cloze wǒ juéde nǐ shuō de shìqíng fēicháng yǒu dàolǐ.}} #card" in 2024_01_10.md, line 6
+2024-01-11 22:21:20 - Replaced "- 我心里有很多事。" with "我心里有很多事。 {{cloze wǒ xīn lǐ yǒu hěn duō shì.}}" in 2024_01_11.md, line 2
+2024-01-11 22:21:20 - 2024_01_11.md, 2024_01_09.md, 2024_01_10.md files updated with Pinyin.
+
+2024-01-11 22:30:57 - Replaced "- 目前我的中文 {{cloze 语法}} 和词汇都比较有限，我会努力学的。  #card" with "我有两个预言 {{cloze 伙伴}} 。我觉得跟他们聊天很有用。 {{cloze wǒ yǒu liǎng gè yùyán huǒbàn. wǒ juéde gēn tāmen liáotiān hěn yǒuyòng.}} #card" in 2024_01_08.md, line 10
+2024-01-11 22:30:57 - Replaced "- 我有两个语言 {{cloze 伙伴}} 。我觉得跟他们聊天很有用。#card" with "我知道世界上所有国家在 {{cloze 地图}} 上的 {{cloze 位置}} 。 {{cloze wǒ zhīdào shìjiè shàng suǒyǒu guójiā zài dìtú shàng de wèizhì.}} #card 🗺️ 🌍️ 📍" in 2024_01_09.md, line 38
+2024-01-11 22:30:57 - Replaced "- 我知道世界上所有国家在 {{cloze 地图}} 上的 {{cloze 位置}} 。#card 🗺️ 🌍️ 📍" with "如果我有这个 {{cloze 能力}} 自己挣钱养家的话，我不需要男生。 {{cloze rúguǒ wǒ yǒu zhège nénglì zìjǐ zhèng qián yǎngjiā de huà, wǒ bù xūyào nánshēng.}} #card" in 2024_01_09.md, line 39
+2024-01-11 22:30:57 - Replaced "- 如果我有这个 {{cloze 能力}} 自己挣钱养家的话，我不需要男生。#card" with "我编程了一个Python {{cloze 脚本}} 。 {{cloze wǒ biānchéng le yī gè Python jiǎoběn.}} #card" in 2024_01_09.md, line 46
+2024-01-11 22:30:57 - Replaced "- 我编程了一个Python {{cloze 脚本}} 。#card" with "我觉得你说的事情非常 {{cloze 有道理}} 。 {{cloze wǒ juéde nǐ shuō de shìqíng fēicháng yǒu dàolǐ.}} #card" in 2024_01_10.md, line 23
+2024-01-11 22:30:57 - Replaced "- 我觉得你说的事情非常 {{cloze 有道理}} 。#card" with "我心里有很多事。 {{cloze wǒ xīn lǐ yǒu hěn duō shì.}}" in 2024_01_10.md, line 30
+2024-01-11 22:30:57 - 2024_01_10.md, 2024_01_08.md, 2024_01_09.md files updated with Pinyin.
+
+2024-01-12 18:43:36 - Replaced "- 目前我的中文 {{cloze 语法}} 和词汇都比较有限，我会努力学的。  #card" with "目前我的中文 {{cloze 语法}} 和词汇都比较有限，我会努力学的。 {{cloze mùqián wǒ de zhōngwén yǔfǎ hé cíhuì dōu bǐjiào yǒuxiàn, wǒ huì nǔlì xué de.}} #card" in 2024_01_08.md, line 16
+2024-01-12 18:43:36 - Replaced "- 足球女性是有过名次，好像有世界 {{cloze 冠军}}，如果我没有记错的话。#card ⚽" with "足球女性是有过名次，好像有世界 {{cloze 冠军}}，如果我没有记错的话。 {{cloze zúqiú nǚxìng shì yǒuguò míngcì, hǎoxiàng yǒu shìjiè guànjūn, rúguǒ wǒ méiyǒu jì cuò dehuà.}} #card ⚽" in 2024_01_11.md, line 2
+2024-01-12 18:43:36 - Replaced "- 我今天收到了我的 {{cloze 项目反馈}} 。#card 👨🏻‍💼" with "我今天收到了我的 {{cloze 项目反馈}} 。 {{cloze wǒ jīntiān shōudào le wǒ de xiàngmù fǎnkuì.}} #card 👨🏻‍💼" in 2024_01_12.md, line 1
+2024-01-12 18:43:36 - Replaced "- 我的项目反馈说我的 {{cloze 表现}} 不够。#card" with "我的项目反馈说我的 {{cloze 表现}} 不够。 {{cloze wǒ de xiàngmù fǎnkuì shuō wǒ de biǎoxiàn bù gòu.}} #card" in 2024_01_12.md, line 8
+2024-01-12 18:43:36 - Replaced "- 对我的自信有严重的 {{cloze 后果}} 。 🙁 #card" with "对我的自信有严重的 {{cloze 后果}} 。 {{cloze duì wǒ de zìxìn yǒu yánzhòng de hòuguǒ.}} 🙁 #card" in 2024_01_12.md, line 9
+2024-01-12 18:43:36 - Replaced "- 我的自信 {{cloze 下降}} 了很多。#card ⬇️ 😟" with "我的自信 {{cloze 下降}} 了很多。 {{cloze wǒ de zìxìn xiàjiàng le hěn duō.}} #card ⬇️ 😟" in 2024_01_12.md, line 10
+2024-01-12 18:43:36 - Replaced "- 他听了我说话。" with "他听了我说话。 {{cloze tā tīng le wǒ shuōhuà.}}" in 2024_01_12.md, line 12
+2024-01-12 18:43:36 - Replaced "- 现在我能做的没有了，只能等待。" with "现在我能做的没有了，只能等待。 {{cloze xiànzài wǒ néng zuò de méiyǒu le, zhǐ néng děngdài.}}" in 2024_01_12.md, line 14
+2024-01-12 18:43:36 - Replaced "- 我的 {{cloze 经理}} 会跟我说我的公司会做什么。#card" with "我的 {{cloze 经理}} 会跟我说我的公司会做什么。 {{cloze wǒ de jīnglǐ huì gēn wǒ shuō wǒ de gōngsī huì zuò shénme.}} #card" in 2024_01_12.md, line 15
+2024-01-12 18:43:36 - Replaced "- 我的说话 {{cloze 技巧}} 很差。#card" with "我的说话 {{cloze 技巧}} 很差。 {{cloze wǒ de shuōhuà jìqiǎo hěn chà.}} #card" in 2024_01_12.md, line 16
+2024-01-12 18:43:36 - Replaced "- 我想要找到一个 {{cloze 愿意}} 帮我练习中文的中国母语者。#card" with "我想要找到一个 {{cloze 愿意}} 帮我练习中文的中国母语者。 {{cloze wǒ xiǎng yào zhǎodào yí gè yuànyì bāng wǒ liànxí zhōngwén de zhōngguó mǔyǔ zhě.}} #card" in 2024_01_12.md, line 17
+2024-01-12 18:43:36 - Replaced "- 他们是我以前公司的。" with "他们是我以前公司的。 {{cloze tāmen shì wǒ yǐqián gōngsī de.}}" in 2024_01_12.md, line 19
+2024-01-12 18:43:36 - 2024_01_08.md, 2024_01_11.md, 2024_01_12.md files updated with Pinyin.
+
+2024-01-13 12:20:57 - Replaced "- 亚洲男性普遍来说会性格偏 {{cloze 内向}} 一点。#card" with "亚洲男性普遍来说会性格偏 {{cloze 内向}} 一点。 {{cloze yàzhōu nánxìng pǔbiàn lái shuō huì xìnggé piān nèixiàng yīdiǎn。}} #card" in 2024_01_12.md, line 74
+2024-01-13 12:20:57 - Replaced "- 他们不太会去 {{cloze 表达}} 自己的想法。 #card" with "他们不太会去 {{cloze 表达}} 自己的想法。 {{cloze tāmen bù tài huì qù biǎodá zìjǐ de xiǎngfǎ。}} #card" in 2024_01_12.md, line 81
+2024-01-13 12:20:57 - Replaced "- 在 {{cloze 交往}} 的这件事情上来说，通常都是男生需要 {{cloze 主动}} 。#card" with "在 {{cloze 交往}} 的这件事情上来说，通常都是男生需要 {{cloze 主动}} 。 {{cloze zài jiāowǎng de zhè jiàn shìqíng shàng lái shuō, tōngcháng dōu shì nánshēng xūyào zhǔdòng。}} #card" in 2024_01_12.md, line 88
+2024-01-13 12:20:57 - Replaced "- 他可能没有学习到其他的方法来 {{cloze 吸引}} 一个女性。 #card" with "他可能没有学习到其他的方法来 {{cloze 吸引}} 一个女性。 {{cloze tā kěnéng méiyǒu xuéxí dào qítā de fāngfǎ lái xīyǐn yī gè nǚxìng。}} #card" in 2024_01_12.md, line 95
+2024-01-13 12:20:57 - Replaced "- 我觉得你们有 {{cloze 足够}} 的时间可以开始玩Catan。#card" with "我觉得你们有 {{cloze 足够}} 的时间可以开始玩Catan。 {{cloze wǒ juédé nǐmen yǒu zúgòu de shíjiān kěyǐ kāishǐ wán Catan。}} #card" in 2024_01_12.md, line 102
+2024-01-13 12:20:57 - 2024_01_12.md files updated with Pinyin.
+
+2024-01-13 13:16:46 - Replaced "- 这是我早上制作视频的其中一次。" with "这是我早上制作视频的其中一次。 {{cloze zhè shì wǒ zǎoshang zhìzuò shìpín de qízhōng yī cì.}}" in 2024_01_13.md, line 3
+2024-01-13 13:16:46 - Replaced "- 现在是我唯一有时间做那件事情。" with "现在是我唯一有时间做那件事情。 {{cloze xiànzài shì wǒ wéiyī yǒu shíjiān zuò nà jiàn shìqing.}}" in 2024_01_13.md, line 5
+2024-01-13 13:16:46 - Replaced "- 当我复习我最后录制自己的视频时，如果有我不知道怎么说的东西，我会问ChatGPT怎么说，然后用它的回答来制作新的 {{cloze 抽认卡}} 。 #card" with "当我复习我最后录制自己的视频时，如果有我不知道怎么说的东西，我会问ChatGPT怎么说，然后用它的回答来制作新的 {{cloze 抽认卡}} 。 {{cloze dāng wǒ fùxí wǒ zuìhòu lùzhì zìjǐ de shìpín shí, rúguǒ yǒu wǒ bù zhīdào zěnme shuō de dōngxi, wǒ huì wèn ChatGPT zěnme shuō, ránhòu yòng tā de huídá lái zhìzuò xīn de chōurènkǎ.}} #card" in 2024_01_13.md, line 6
+2024-01-13 13:16:46 - Replaced "- 我会修两天假。" with "我会修两天假。 {{cloze wǒ huì xiū liǎng tiān jià.}}" in 2024_01_13.md, line 8
+2024-01-13 13:16:46 - Replaced "- 这是浪费时间。" with "这是浪费时间。 {{cloze zhè shì làngfèi shíjiān.}}" in 2024_01_13.md, line 10
+2024-01-13 13:16:46 - 2024_01_13.md files updated with Pinyin.
+
+2024-01-14 00:06:04 - Replaced "- 中国学习 {{cloze 禁止}} 早恋。#card 👩‍❤️‍👨" with "中国学习 {{cloze 禁止}} 早恋。 {{cloze zhōngguó xuéxí jìnzhǐ zǎoliàn}} 👩‍❤️‍👨 #card" in 2024_01_13.md, line 106
+2024-01-14 00:06:04 - Replaced "- 怎么 {{cloze 发展}} (develop) 你跟女性沟通的技巧？#card" with "怎么 {{cloze 发展}} (develop) 你跟女性沟通的技巧？ {{cloze zěnme fāzhǎn nǐ gēn nǚxìng gōutōng de jìqiǎo?}} #card" in 2024_01_13.md, line 107
+2024-01-14 00:06:04 - Replaced "- 他默默地跟在后面，就是让人觉得 {{cloze 莫名其妙}} (weird)，别人也 {{cloze 看不起}} (despise)他。" with "他默默地跟在后面，就是让人觉得 {{cloze 莫名其妙}} (weird)，别人也 {{cloze 看不起}} (despise)他。 {{cloze tā mòmò de gēn zài hòumiàn, jiùshì ràng rén juéde mòmíngqímiào, biérén yě kànbuqǐ tā.}}" in 2024_01_13.md, line 108
+2024-01-14 00:06:04 - 2024_01_13.md files updated with Pinyin.
+
+2024-01-15 10:36:31 - Replaced "- 说直白一点，你是不是就想跟别人 {{cloze 上床}} ？你是不是就想跟他 {{cloze 接吻}} 哪？#card" with "说直白一点，你是不是就想跟别人 {{cloze 上床}} ？你是不是就想跟他 {{cloze 接吻}} 哪？ {{cloze shuō zhíbái yīdiǎn, nǐ shì bù shì jiù xiǎng gēn biérén shàngchuáng? Nǐ shì bù shì jiù xiǎng gēn tā jiēwěn na?}} #card" in 2024_01_14.md, line 8
+2024-01-15 10:36:31 - Replaced "- 如果你讲这个人称为神的话，你已经把自己的 {{cloze 地位}} 放得很低了。#card" with "如果你讲这个人称为神的话，你已经把自己的 {{cloze 地位}} 放得很低了。 {{cloze rúguǒ nǐ jiǎng zhège rén chēng wéi shén de huà, nǐ yǐjīng bǎ zìjǐ de dìwèi fàng de hěn dī le.}} #card" in 2024_01_15.md, line 2
+2024-01-15 10:36:31 - Replaced "- 她农村出来的。" with "她农村出来的。 {{cloze tā nóngcūn chū lái de.}}" in 2024_01_15.md, line 4
+2024-01-15 10:36:31 - 2024_01_14.md, 2024_01_15.md files updated with Pinyin.
+
+2024-01-16 18:35:01 - Replaced "card-last-reviewed:: 2024-01-15T02:40:02.944Z" with "因为我玩游戏的时候很 {{cloze 争强好胜}} ，所以我既感到兴奋又有点紧张。 {{cloze yīnwèi wǒ wán yóuxì de shíhou hěn zhēngqiánghǎoshèng, suǒyǐ wǒ jì gǎndào xīngfèn yòu yǒudiǎn jǐnzhāng.}} #card" in 2024_01_15.md, line 7
+2024-01-16 18:35:01 - Replaced "card-last-score:: 5" with "最后，我大概在 {{cloze 凌晨}} 两点半睡着了。 {{cloze zuìhòu, wǒ dàgài zài língchén liǎng diǎn bàn shuìzháo le.}} #card" in 2024_01_15.md, line 8
+2024-01-16 18:35:01 - Replaced "card-last-interval:: 3.32" with "我和一个关系很近的朋友一起出去了。 {{cloze wǒ hé yīgè guānxì hěn jìn de péngyǒu yìqǐ chūqù le.}}" in 2024_01_15.md, line 10
+2024-01-16 18:35:01 - 2024_01_15.md files updated with Pinyin.
+
+2024-01-16 18:37:21 - Replaced "- 因为我玩游戏的时候很 {{cloze 争强好胜}} ，所以我既感到兴奋又有点紧张。 #card" with "因为我玩游戏的时候很 {{cloze 争强好胜}} ，所以我既感到兴奋又有点紧张。 {{cloze yīnwèi wǒ wán yóuxì de shíhou hěn zhēngqiánghǎoshèng, suǒyǐ wǒ jì gǎndào xīngfèn yòu yǒudiǎn jǐnzhāng.}} #card" in 2024_01_15.md, line 19
+2024-01-16 18:37:21 - Replaced "- 最后，我大概在 {{cloze 凌晨}} 两点半睡着了。 #card" with "最后，我大概在 {{cloze 凌晨}} 两点半睡着了。 {{cloze zuìhòu, wǒ dàgài zài língchén liǎng diǎn bàn shuìzháo le.}} #card" in 2024_01_15.md, line 20
+2024-01-16 18:37:21 - Replaced "- 我和一个关系很近的朋友一起出去了。" with "我和一个关系很近的朋友一起出去了。 {{cloze wǒ hé yīgè guānxì hěn jìn de péngyǒu yìqǐ chūqù le.}}" in 2024_01_15.md, line 22
+2024-01-16 18:37:21 - 2024_01_15.md files updated with Pinyin.
+
+2024-01-18 00:18:55 - Replaced "- 今天没有什么好说的。" with "今天没有什么好说的。 {{cloze jīntiān méiyǒu shénme hǎo shuō de.}}" in 2024_01_16.md, line 9
+2024-01-18 00:18:55 - Replaced "- 这有点像玩火。" with "这有点像玩火。 {{cloze zhè yǒudiǎn xiàng wán huǒ.}}" in 2024_01_17.md, line 9
+2024-01-18 00:18:55 - Replaced "- 他就是想跟你接吻或者其他的进一步的关系。" with "他就是想跟你接吻或者其他的进一步的关系。 {{cloze tā jiùshì xiǎng gēn nǐ jiēwěn huòzhě qítā de jìnyībù de guānxì.}}" in 2024_01_17.md, line 10
+2024-01-18 00:18:55 - Replaced "- 我感到很有压力。" with "我感到很有压力。 {{cloze wǒ gǎndào hěn yǒu yālì.}}" in 2024_01_18.md, line 3
+2024-01-18 00:18:55 - Replaced "- 因为我最近几天在工作感到很有压力，我下班以后又头疼。" with "因为我最近几天在工作感到很有压力，我下班以后又头疼。 {{cloze yīnwèi wǒ zuìjìn jǐ tiān zài gōngzuò gǎndào hěn yǒu yālì, wǒ xiàbān yǐhòu yòu tóuténg.}}" in 2024_01_18.md, line 6
+2024-01-18 00:18:55 - Replaced "- 可能冥想有帮助。" with "可能冥想有帮助。 {{cloze kěnéng míngxiǎng yǒu bāngzhù.}}" in 2024_01_18.md, line 8
+2024-01-18 00:18:55 - 2024_01_16.md, 2024_01_18.md, 2024_01_17.md files updated with Pinyin.
+
+2024-01-23 23:17:58 - Replaced "- 现在我没有什么可以做的，只能等待。" with "现在我没有什么可以做的，只能等待。 {{cloze xiànzài wǒ méiyǒu shénme kěyǐ zuò de, zhǐnéng děngdài.}}" in 2024_01_12.md, line 44
+2024-01-23 23:17:58 - Replaced "- 中国学校 {{cloze 禁止}} 早恋。  👩‍❤️‍👨❌ #card" with "中国学校 {{cloze 禁止}} 早恋。  👩‍❤️‍👨❌ #card {{cloze zhōngguó xuéxiào jìnzhǐ zǎoliàn.}}" in 2024_01_13.md, line 118
+2024-01-23 23:17:58 - Replaced "- 因为我最近几天在工作感到很有压力，我下班以后有头疼。" with "因为我最近几天在工作感到很有压力，我下班以后有头疼。 {{cloze yīnwèi wǒ zuìjìn jǐ tiān zài gōngzuò gǎndào hěn yǒu yālì, wǒ xiàbān yǐhòu yǒu tóuténg.}}" in 2024_01_17.md, line 28
+2024-01-23 23:17:58 - Replaced "- 他可能会做一些很 {{cloze 极端}} (extreme) 的事情。#card" with "他可能会做一些很 {{cloze 极端}} (extreme) 的事情。#card {{cloze tā kěnéng huì zuò yìxiē hěn jídùan de shìqíng.}}" in 2024_01_18.md, line 2
+2024-01-23 23:17:58 - Replaced "- 在网上就有看到很多这样的 {{cloze 言论}}  (comments)。#card" with "在网上就有看到很多这样的 {{cloze 言论}}  (comments)。#card {{cloze zài wǎngshàng jiù yǒu kàndào hěnduō zhèyàng de yánlùn.}}" in 2024_01_18.md, line 9
+2024-01-23 23:17:58 - Replaced "- 整天过得很好。" with "整天过得很好。 {{cloze zhěng tiān guò de hěn hǎo.}}" in 2024_01_18.md, line 24
+2024-01-23 23:17:58 - Replaced "- 这次老师活力四射和友好。" with "这次老师活力四射和友好。 {{cloze zhè cì lǎoshī huólì sìshè hé yǒuhǎo.}}" in 2024_01_18.md, line 32
+2024-01-23 23:17:58 - Replaced "- 我出局了。" with "我出局了。 {{cloze wǒ chūjú le.}}" in 2024_01_23.md, line 9
+2024-01-23 23:17:58 - Replaced "- 我被开除了。" with "我被开除了。 {{cloze wǒ bèi kāichú le.}}" in 2024_01_23.md, line 17
+2024-01-23 23:17:58 - Replaced "- 再过一段时间之后, ..." with "再过一段时间之后, ... {{cloze zài guò yí duàn shíjiān zhīhòu, ...}}" in 2024_01_23.md, line 31
+2024-01-23 23:17:58 - Replaced "- 我没有多少时间了。" with "我没有多少时间了。 {{cloze wǒ méiyǒu duōshǎo shíjiān le.}}" in 2024_01_23.md, line 39
+2024-01-23 23:17:58 - 2024_01_18.md, 2024_01_12.md, 2024_01_17.md, 2024_01_13.md, 2024_01_23.md files updated with Pinyin.
+
+2024-01-24 23:15:58 - Replaced "- 从我的角度看来，..." with "从我的角度看来，... {{cloze cóng wǒ de jiǎodù kànlái,...}}" in 2024_01_24.md, line 10
+2024-01-24 23:15:58 - Replaced "- 我觉得很烦。" with "我觉得很烦。 {{cloze wǒ juéde hěn fán.}}" in 2024_01_24.md, line 13
+2024-01-24 23:15:58 - Replaced "- 我们几乎 {{cloze 错过}} 了我们的飞机。#card" with "我们几乎 {{cloze 错过}} 了我们的飞机。#card {{cloze wǒmen jīhū cuòguò le wǒmen de fēijī.}} #card" in 2024_01_24.md, line 14
+2024-01-24 23:15:58 - Replaced "- 我们不得不跑了很多。" with "我们不得不跑了很多。 {{cloze wǒmen bùdébù pǎo le hěnduō.}}" in 2024_01_24.md, line 16
+2024-01-24 23:15:58 - 2024_01_24.md files updated with Pinyin.
+
+2024-01-27 12:21:41 - Replaced "- 现在没有什么我能做的， 只能等待。" with "现在没有什么我能做的，只能等待。 {{cloze xiànzài méiyǒu shénme wǒ néng zuò de, zhǐ néng děngdài}}" in 2024_01_12.md, line 45
+2024-01-27 12:21:41 - Replaced "- 今天我的一个关系很近的朋友给我发了一条信息。" with "今天我的一个关系很近的朋友给我发了一条信息。 {{cloze jīntiān wǒ de yīgè guānxì hěn jìn de péngyǒu gěi wǒ fāle yītiáo xìnxī}}" in 2024_01_25.md, line 39
+2024-01-27 12:21:41 - Replaced "- 我今天在工作中有很成效。" with "我今天在工作中有很成效。 {{cloze wǒ jīntiān zài gōngzuò zhōng yǒu hěn chéngxiào}}" in 2024_01_26.md, line 9
+2024-01-27 12:21:41 - Replaced "- 就是这样的一个情感的 {{cloze 价值}} (values)。#card" with "就是这样的一个情感的 {{cloze 价值}} (values)。 {{cloze jiùshì zhèyàng de yīgè qínggǎn de jiàzhí}} #card" in 2024_01_26.md, line 17
+2024-01-27 12:21:41 - Replaced "- 我们下面来 {{cloze 总结}} (summarize) 一下为什么会有这么多舔狗。#card" with "我们下面来 {{cloze 总结}} (summarize) 一下为什么会有这么多舔狗。 {{cloze wǒmen xiàmiàn lái zǒngjié yīxià wèishéme huì yǒu zhème duō tiǎngǒu}} #card" in 2024_01_26.md, line 18
+2024-01-27 12:21:41 - Replaced "- 根据我的观察，..." with "根据我的观察，... {{cloze gēnjù wǒ de guānchá，...}}" in 2024_01_26.md, line 20
+2024-01-27 12:21:41 - Replaced "- 你可以通过很多方法去 {{cloze 分散}} (disperse) 你的 {{cloze 注意力}} (attention)。#card" with "你可以通过很多方法去 {{cloze 分散}} (disperse) 你的 {{cloze 注意力}} (attention)。 {{cloze nǐ kěyǐ tōngguò hěnduō fāngfǎ qù fēnsàn nǐ de zhùyìlì}} #card" in 2024_01_26.md, line 21
+2024-01-27 12:21:41 - 2024_01_25.md, 2024_01_26.md, 2024_01_12.md files updated with Pinyin.
+
+2024-01-28 21:21:17 - Replaced "- 我目前的中文很 {{cloze 差/烂}} 。 #card" with "我目前的中文很 {{cloze 差/烂}} 。 {{cloze wǒ mùqián de zhōngwén hěn chà/làn.}} #card" in 2024_01_09.md, line 2
+2024-01-28 21:21:17 - Replaced "- 今天的工作很有成效。" with "今天的工作很有成效。 {{cloze jīntiān de gōngzuò hěn yǒu chéngxiào.}}" in 2024_01_26.md, line 9
+2024-01-28 21:21:17 - Replaced "- 我等一下要去一个活动了。" with "我等一下要去一个活动了。 {{cloze wǒ děng yīxià yào qù yīgè huódòng le.}}" in 2024_01_27.md, line 80
+2024-01-28 21:21:17 - Replaced "- 我们要去 {{cloze 酒吧}}  (bar)了。" with "我们要去 {{cloze 酒吧}} (bar)了。 {{cloze wǒmen yào qù jiǔbā le.}}" in 2024_01_28.md, line 2
+2024-01-28 21:21:17 - Replaced "- 我喜欢打台球。" with "我喜欢打台球。 {{cloze wǒ xǐhuān dǎ táiqiú.}}" in 2024_01_28.md, line 10
+2024-01-28 21:21:17 - 2024_01_28.md, 2024_01_27.md, 2024_01_26.md, 2024_01_09.md files updated with Pinyin.
+
+2024-01-29 22:30:18 - Replaced "- 收到西方文化的影响，{{cloze 纹身}} (tattoo) 在中国年轻人当中也是越来越 {{cloze 流行}}  (popular)。#card" with "收到西方文化的影响，{{cloze 纹身}} (tattoo) 在中国年轻人当中也是越来越 {{cloze 流行}} (popular)。 {{cloze shōudào xīfāng wénhuà de yǐngxiǎng, wénshēn zài zhōngguó niánqīng rén dāngzhōng yěshì yuè lái yuè liúxíng.}} #card" in 2024_01_29.md, line 1
+2024-01-29 22:30:18 - Replaced "- 你对有纹身的人的第一 {{cloze 印象}} 是什么？ #card" with "你对有纹身的人的第一 {{cloze 印象}} 是什么？ {{cloze nǐ duì yǒu wénshēn de rén de dì yī yìnxiàng shì shénme?}} #card" in 2024_01_29.md, line 2
+2024-01-29 22:30:18 - Replaced "- 我喜欢玩夜店。" with "我喜欢玩夜店。 {{cloze wǒ xǐhuān wán yèdiàn.}}" in 2024_01_29.md, line 4
+2024-01-29 22:30:18 - Replaced "- 我昨天在晚上 {{cloze 搜索}} (search)了一下Osaka有什么有趣的东西。#card" with "我昨天在晚上 {{cloze 搜索}} (search)了一下Osaka有什么有趣的东西。 {{cloze wǒ zuótiān zài wǎnshang sōusuǒ le yīxià Osaka yǒu shénme yǒuqù de dōngxī.}} #card" in 2024_01_29.md, line 5
+2024-01-29 22:30:18 - 2024_01_29.md files updated with Pinyin.
+
+2024-01-31 10:04:20 - Replaced "- 总体来说，中国人对大面积纹身有没有什么 {{cloze 刻板印象}} (stereotypes) 或者是 {{cloze 偏见}} (prejudices)？#card" with "总体来说，中国人对大面积纹身有没有什么 {{cloze 刻板印象}} (stereotypes) 或者是 {{cloze 偏见}} (prejudices)？ {{cloze zǒngtǐ lái shuō, zhōngguó rén duì dà miànjī wénshēn yǒu méiyǒu shénme kèbǎn yìnxiàng huòzhě shì piānjiàn}} #card" in 2024_01_30.md, line 27
+2024-01-31 10:04:20 - Replaced "- 有啊，当然有！ {{cloze 大多数}}  (majority) 人还是有的。 #card" with "有啊，当然有！ {{cloze 大多数}} (majority) 人还是有的。 {{cloze yǒu a, dāngrán yǒu! dà duōshù rén háishi yǒu de.}} #card" in 2024_01_30.md, line 28
+2024-01-31 10:04:20 - Replaced "- 他之前有抑郁症。" with "他之前有抑郁症。 {{cloze tā zhīqián yǒu yìyù zhèng.}}" in 2024_01_30.md, line 30
+2024-01-31 10:04:20 - Replaced "- 我给他发送了一个信息。" with "我给他发送了一个信息。 {{cloze wǒ gěi tā fāsòng le yīgè xìnxī.}}" in 2024_01_30.md, line 33
+2024-01-31 10:04:20 - Replaced "- 她是一个比较 {{cloze 有个性}} (has personality) 的女生。#card" with "她是一个比较 {{cloze 有个性}} (has personality) 的女生。 {{cloze tā shì yīgè bǐjiào yǒu gèxìng de nǚshēng.}} #card" in 2024_01_31.md, line 3
+2024-01-31 10:04:20 - Replaced "- 星巴克" with "星巴克 {{cloze xīngbākè}}" in 2024_01_31.md, line 5
+2024-01-31 10:04:20 - Replaced "- 我在网上搜索一下关于在斯里兰卡度假时住在哪里。" with "我在网上搜索一下关于在斯里兰卡度假时住在哪里。 {{cloze wǒ zài wǎngshàng sōusuǒ yīxià guānyú zài Sīlǐlánkǎ dùjià shí zhù zài nǎlǐ.}}" in 2024_01_31.md, line 7
+2024-01-31 10:04:20 - Replaced "- 我要去洗脸了。" with "我要去洗脸了。 {{cloze wǒ yào qù xǐ liǎn le.}}" in 2024_01_31.md, line 9
+2024-01-31 10:04:20 - 2024_01_30.md, 2024_01_31.md files updated with Pinyin.
+

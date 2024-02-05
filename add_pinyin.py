@@ -76,8 +76,8 @@ def update_markdown_files(
                 "Error: The number of"
                 f" lines from ChatGPT ({len(chatgpt_output)}) does not match the number of"
                 f" references ({len(files_and_lines_ref)}).\n"
-                f"chatgpt_output:\n{chatgpt_output}\n"
-                f"files_and_lines_ref:\n{files_and_lines_ref}\n"
+                # f"chatgpt_output:\n{chatgpt_output}\n"
+                # f"files_and_lines_ref:\n{files_and_lines_ref}\n"
                 "Canceling the program.\n"
             )
             log.write(f'{datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")} - {message}')
@@ -103,19 +103,49 @@ def update_markdown_files(
 
 def create_chatgpt_prompt(chinese_voc_no_pinyin: list) -> str:
     text_prompt_to_chatgpt = (
-        "\nAdd the pinyin in parentheses next to the chinese words for each vocabulary"
-        " line. The format should be:\n- {chinese_characters} ({pinyin}):"
-        " {english_translation}\nDo not capitalize the first letter of the pinyin (e.g.,"
-        " wanted: zuò fàn, not wanted: Zuò fàn).\nIf there are lines with 2 or more Chinese"
-        " words separated by a comma, put the pinyin next to its corresponding voc (e.g.,"
-        " wanted: 做饭 (zuò fàn)，烹饪 (pēng rèn): to cook, not wanted: 做饭 ，烹饪 (zuò"
-        " fàn, pēng rèn): to cook).\nDo not separate the pinyin into 2 parts if it"
-        " corresponds to 1 word or expression (e.g., wanted: 面包 (miànbāo), not wanted:"
-        " 面包 (miàn bāo))\nDo not remove duplicates. The total number of lines (Total"
-        " number of Chinese vocabulary) should remain the same, i.e., do not split existing"
-        " lines (e.g., - to cook: 做饭 ，烹饪 should remain 1 line only).\nAt the end,"
-        " show me the total number of lines for which you added pinyin.\n\nConsolidated"
-        " Chinese vocabulary (without Pinyin):\n"
+        # fmt: off
+        "### CONTEXT\n"
+        "In my effort to learn Chinese, I would like to automatically add pinyin to my "
+        "Chinese vocabulary list inside my Markdown files by simply copying your output (click copy of the code block).\n\n"
+
+        "### OBJECTIVE\n"
+        "Add the pinyin in parentheses next to the Chinese characters (after the end of the sentence) for each vocabulary line.\n\n"
+
+        "### RESPONSE\n"
+        " The format should be a unrendered markdown code block that I can copy:\n"
+        "<format>\n"
+        "chinese_characters。 {{cloze added_pinyin}}\n"
+        "</format>\n\n"
+        "Do not keep the hyphen '-' at the beginning of the line.\n"
+        "Make sure there is a space before the first bracket '{' of the {{cloze }} tag for the added pinyin.\n"
+        "The {{cloze }} tag should always have 1 space around it.\n"
+        "Do not remove anything from the vocabulary line.\n"
+        "Put the pinyin before the #card tag (if there is one).\n"
+        "In the Chinese sentence, leave the {{cloze }} tag as it is, without any modification.\n"
+        "Do not capitalize the first letter of the pinyin.\n"
+        "Do not separate the pinyin into 2 parts if it corresponds to 1 word or expression.\n"
+        "Do not remove duplicates. The total number of lines (Total number of Chinese vocabulary) should remain the same, i.e., do not split existing lines.\n"
+        "Keep the formatting as it is.\n"
+        "At the end, show me the total number of lines for which you added pinyin.\n\n"
+
+        "### EXAMPLES\n"
+        "<example 1>\n"
+        "input: - 那些人都不 {{cloze 注重}} 自己的形象。 🤷‍♂️ #card\n"
+        "output wanted: 那些人都不 {{cloze 注重}} 自己的形象。 {{cloze nàxiē rén dōu bù zhùzhòng zìjǐ de xíngxiàng}} 🤷‍♂️ #card\n"
+        "</example 1>\n\n"
+
+        "<example 2>\n"
+        "input: - 目前我的法语 {{cloze 语法}}和词汇都比较有限，我会努力学的。 #card ![Grammarly vs. Grammarly Premium Review: Which is Better?](https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/Grammarly-vs-Grammarly-Premium.jpg?fit=1200%2C666&ssl=1) \n"
+        "output wanted: 目前我的法语 {{cloze 语法}}和词汇都比较有限，我会努力学的。 {{cloze mùqián wǒ de fǎyǔ yǔfǎ hé cíhuì dōu bǐjiào yǒuxiàn, wǒ huì nǔlì xué de.}} #card ![Grammarly vs. Grammarly Premium Review: Which is Better?](https://i0.wp.com/www.alphr.com/wp-content/uploads/2020/11/Grammarly-vs-Grammarly-Premium.jpg?fit=1200%2C666&ssl=1) \n"
+        "</example 2>\n\n"
+
+        "<example 3>\n"
+        "input: - 我不知道为什么最近几天我的 {{cloze 过敏}} 症状突然 {{cloze 发作}} 了。🤧 #card\n"
+        "output wanted: 我不知道为什么最近几天我的 {{cloze 过敏}} 症状突然 {{cloze 发作}} 了。 {{cloze wǒ bù zhīdào wèishéme zuìjìn jǐ tiān wǒ de guòmǐn zhèngzhuàng tūrán fāzuò le.}}  🤧 #card\n"
+        "</example 3>\n\n"
+
+        "### Consolidated Chinese vocabulary (without Pinyin):\n\n"
+        # fmt: on
     )
     all_lines = ""
     for line in chinese_voc_no_pinyin:
@@ -183,6 +213,7 @@ if __name__ == "__main__":
 
 
 # Functionality
+# TOFIX: fix the indentation
 # TODO: Create new test python script for chatgpt based on theme, e.g.:
 # Give me all the vocabulary related to negativity (emotions, actions, etc.) among my voc list below.
 # Do not change anything, just give me the negative Chinese voc lines.
